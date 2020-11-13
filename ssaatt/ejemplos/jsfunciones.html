@@ -1,38 +1,58 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="estilos/normalize.css">
-        <link rel="stylesheet" href="estilos/main.css">
-        <title>Introducción a JavaScript - funciones</title>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/main.css">
+    <title>Introducción a JavaScript - funciones</title>
 
 
-    </head>
-    <body>
-        <header>
-            <h1>Introducción a JavaScript - Funciones</h1>
-        </header>
-        <main>
-            <p>En este ejemplo se muestran ejemplos del manejo de funciones en JavaScript</p>
-            <section>
-                <h2>Definición y acceso a los elementos</h2>
-                <article>
-                    <h3>Sintaxis de definición de funciones</h3>
-                    <p>
-                        Se emplea <code>function</code> seguido del <code>nombre</code> y a continuación una parénteris <code>(...)</code>, que pueden contener, o no, parámetros, y el código se debe encerrar entre llaves <code>&lbrace;...&rbrace;</code>;
-                    </p>
+</head>
 
-                    <aside>
-                        <h4>&lt;script&gt;</h4>
-                        <pre>
+<body>
+    <header>
+        <h1>Introducción a JavaScript - Funciones</h1>
+    </header>
+    <main>
+        <p>En este ejemplo se muestran ejemplos del manejo de funciones en JavaScript</p>
+        <section>
+            <h2>Definición y acceso a los elementos</h2>
+            <article>
+                <h3>Sintaxis de definición de funciones</h3>
+                <p>
+                    Se emplea <code>function</code> seguido del <code>nombre</code> y a continuación una parénteris
+                    <code>(...)</code>, que pueden contener, o no, parámetros, y el código se debe encerrar entre llaves
+                    <code>&lbrace;...&rbrace;</code>;
+                </p>
+                <pre>
 function name(parameter1, parameter2, parameter3) {
   // código a ejecutar
 }
-
-                        </pre>
-                    </aside>
-                    <p>Una función se puede definir de diversas maneras</p>
+</pre>
+                <aside>
+                    <h4>&lt;script&gt;</h4>
                     <pre>
+// La función devolverá la suma de p1 y p2
+function miSuma(p1, p2) {
+    return p1 + p2;  
+}
+
+// Tambíén…
+let miSuma = function (p1, p2) {
+    return p1 + p2;  
+};
+
+// O con la función flecha =>
+let miSuma = (p1, p2) => {
+    return p1 + p2;  
+};
+                        
+                        </pre>
+                </aside>
+                <p>Una función se puede definir de diversas maneras</p>
+                <pre>
+
 // La función devolverá la suma de p1 y p2
 function miSuma(p1, p2) {
   return p1 + p2;  
@@ -49,19 +69,15 @@ let miSuma = (p1, p2) => {
 };
 
                     </pre>
-                </article>
-                <article>
-                    <h3>Emplear una función</h3>
-                    <p>Una función se puede definir de diversas maneras</p>
-                    <aside>
-                        <h4>&lt;script&gt;</h4>
+            </article>
+            <article>
+                <h3>Emplear una función</h3>
+                <p>Una función se puede definir de diversas maneras</p>
+                <aside>
+                    <h4>&lt;script&gt;</h4>
+
+                    <pre>
                         <script>
-                            function Resultado() {
-                                this.x1 = 0;
-                                this.x2 = 0;
-                            }
-                            ;
-                            // ax2+bx+c=0
                             function ecuacion2grado(a, b, c) {
                                 console.log(a + " " + b + " " + c);
                                 console.log(a + " " + b + " " + c);
@@ -71,27 +87,25 @@ let miSuma = (p1, p2) => {
                                 console.log(resultado.x1 + " " + resultado.x2);
                                 return resultado.x1 + ", " + resultado.x2;
                             }
-
-
+                            document.write("Se acaba de definir la función (empleamos su nombre): <pre>" + ecuacion2grado + "</pre>");
                         </script>
-                        <pre>
-<script>
-                                document.write("Se acaba de definir la función (empleamos su nombre): <pre>" + ecuacion2grado + "</pre>");
-                                                                                                                                                                                                        </script>
-                        </pre>
-                    </aside>
-                    <form   oninput="res.value=ecuacion2grado(a.value,b.value,c.value)" name="ecuacion" >
-                        <input type="number" name="a">x<sup>2</sup>+<input type="number" name="b">x+<input type="number" name="c">
-                        =<output name="res" for="a b c"></output>
-                    </form>
-                </article>
-                <article>
-                    <h3>Propiedades de las funciones</h3>
-                    <p>Su nombre se accede por la propiedad <code>name</code> y los parámetros por <code>arguments</code> por lo, aunque no se defina ninún parámetro, se pueden introducir los que se quiera y acceder a ellos.</p>
+                    </pre>
+                </aside>
+                <form oninput="res.value=ecuacion2grado(a.value,b.value,c.value)" name="ecuacion">
+                    <input type="number" name="a" value="0">x<sup>2</sup>+<input type="number" name="b"
+                        value="0">x+<input type="number" name="c" value="1">
+                    =<output name="res" for="a b c"></output>
+                </form>
+            </article>
+            <article>
+                <h3>Propiedades de las funciones</h3>
+                <p>Su nombre se accede por la propiedad <code>name</code> y los parámetros por <code>arguments</code>
+                    por lo, aunque no se defina ninún parámetro, se pueden introducir los que se quiera y acceder a
+                    ellos.</p>
 
-                    <aside>
-                        <h4>&lt;script&gt;</h4>
-                        <pre>
+                <aside>
+                    <h4>&lt;script&gt;</h4>
+                    <pre>
 function sumar() {
     let suma = 0;
     for (let s of arguments) {
@@ -102,33 +116,200 @@ function sumar() {
 
 document.write("Se accede a la propiedad <code>name</code>:" + ecuacion2grado.name);
                         </pre>
-                    </aside>
-                    <form   oninput="suma.value=sumar(s1.value,s2.value,s3.value)" name="ecuacion" >
-                        <fieldset>
-                            <legend>Suma</legend>
-                            Sumando <input type="number" name="s1"><br>
-                            Sumando <input type="number" name="s2"><br>
-                            Sumando <input type="number" name="s3"><br>
-                            =<output name="suma" for="s1 s2 s3"></output>
-                        </fieldset>
-                    </form>
+                </aside>
+                <form oninput="suma.value=sumar(s1.value,s2.value,s3.value)" name="ecuacion">
+                    <fieldset>
+                        <legend>Suma</legend>
+                        Sumando <input type="number" name="s1" value="0"><br>
+                        Sumando <input type="number" name="s2" value="0"><br>
+                        Sumando <input type="number" name="s3" value="0"><br>
+                        =<output name="suma" for="s1 s2 s3"></output>
+                    </fieldset>
+                </form>
+                <script>
+                    function sumar() {
+                                    let suma = 0;
+                                    for (let s of arguments) {
+                                        suma += parseInt(s);
+                                    }
+                                    return suma;
+                                }
+
+                    document.write("Se accede a la propiedad <code>name</code>:" + ecuacion2grado.name);
+                </script>
+            </article>
+            <article>
+                <h3>Tipos de declaración de funciones</h3>
+                <p>Las funciones pueden ser declaradas con <code>function</code>, como expresiones y como funciones
+                    flecha. Algunos aspectos de su comportamiento depende la forma en la que se declaren.</p>
+                <p>Las funciones declaradas con <code>function</code> se añaden globalmente por lo que pueden ser usadas
+                    incluso por expresiones que se hayan escrito antes que su declaración. Esto no pasa si una función
+                    se declara como una expresión o como función flecha.</p>
+                <aside>
+                    <h4>&lt;script&gt;</h4>
+                    <pre>
+
+saluda(); //Se produce el saludo en consola porque se aplica hoisting a la declaracion de saluda()
+    
+function saluda() {
+  document.write("Hola, soy una función declarada con &lt;code&gt;function nombre(){...}&lt;/code&gt;");
+}
+
+try {
+    otroSaludo(); //Dará un error ReferenceError.
+} catch (error) {
+    document.write("Como soy una función en una expresión, aún no me conocen y he dado un error:&lt;code&gt;" + error + "&lt;/code&gt;");
+}
+    
+let otroSaludo = function () {
+    console.log("Buenos días, soy una función declarada en una expresión");
+}
+  
+try {
+    masSaludo(); // Tampoco se 
+} catch (error) {
+    document.write("Igual me pasa a mí al ser una función flecha, que he dado un otro error:&lt;code&gt;" + error + "&lt;/code&gt;");
+}
+
+let masSaludo = () => document.write("Buenas tardes, soy una función flecha.");
+                        </pre>
+
+                </aside>
+                <h4>Mira el código de las tres funciones:</h4>
+                <p>
                     <script>
-                        function sumar() {
-                            let suma = 0;
-                            for (let s of arguments) {
-                                suma += parseInt(s);
-                            }
-                            return suma;
+                        saluda(); //Se produce el saludo en consola porque se aplica hoisting a la declaracion de saluda()
+
+                        function saluda() {
+                            document.write("Hola, soy una función declarada con <code>function nombre(){...}</code>");
+                        }
+                    </script>
+                </p>
+                <p>
+                    <script>
+
+                        try {
+                            otroSaludo(); //Dará un error ReferenceError.
+                        } catch (error) {
+                            document.write("Como soy una función en una expresión, aún no me conocen y he dado un error:<code>" + error + "</code>");
                         }
 
-                        document.write("Se accede a la propiedad <code>name</code>:" + ecuacion2grado.name);
+                        let otroSaludo = function () {
+                            console.log("Buenos días, soy una función declarada en una expresión");
+                        }
+
                     </script>
-                </article>
-            </section>
+                </p>
+                <p>
+                    <script>
+                        try {
+                            masSaludo(); // Tampoco se 
+                        } catch (error) {
+                            document.write("Igual me pasa a mí al ser una función flecha, que he dado un otro error:<code>" + error + "</code>");
+                        }
 
-            <section><br><a href="index.html">Inicio</a><br></section>
-        </main>
-        <footer><p>Servicios y Aplicaciones Telemáticas</p></footer>
-    </body>
+                        let masSaludo = () => document.write("Buenas tardes, soy una función flecha.");
+                    </script>
+                </p>
+            </article>
+
+            <article>
+                <h3>Comportamiento del objeto <code>this</code></h3>
+
+
+                <aside>
+                    <h4>&lt;script&gt;</h4>
+                    <pre>
+window.nombre = "Ventana";
+this.tipo = "Navegador";//También es el objeto Window
+
+let objeto = {
+    nombre: "Un objeto",
+    tipo: "objeto",
+    fun (){ document.write("fun() nombre="+this.nombre+"<br>")},
+    fun2 : ()=>document.write("fun2() nombre="+this.nombre+"<br>"),
+    fun3 (timeout = 1000) { 
+        setTimeout(()=>console.log("fun3 nombre="+this.nombre),timeout);
+    }
+}
+
+function usoThis() {
+    document.write("Empleo <code>this</code> nombre:" + this.nombre + " tipo=" + this.tipo + "<br>");//La referencias van al objeto Window
+}
+
+usoThis();
+
+objeto.usoThis = usoThis;
+objeto.usoThis();//Ahora la referencia this es al objeto
+
+let flecha = ()=> document.write("función flecha nombre="+this.nombre+" y tipo="+this.tipo+ "<br>");
+
+objeto.flecha = flecha;
+
+flecha();
+objeto.flecha();//La función flacha mantiene el contexto donde se declaró
+objeto.fun();//Como es una función regular muestra el contexto de llamada
+objeto.fun2();//La función flecha no emplea el contexto de llamada sino el de definición.
+objeto.fun3();//Abre la consola para ver el resultado
+                    </pre>
+
+                </aside>
+
+                <p>El objeto this se comporta de manera diferente si es dentro de una función estándar o en una función
+                    flecha:></p>
+                <ul>
+                    <li>Función estándar: referencia al contexto dentro del cual la función está operando.
+                        Por ejemplo, si una función se llama dentro del ámbito global de la página, this apunta al
+                        objeto
+                        Window.</li>
+                    <li>Función flecha: referencia al contexto dentro del cual se ha declarado la expresión con la
+                        función
+                        flecha. Esta característica se aprovecha, por ejemplo, en eventos o temporizadores cuya función
+                        de llamada
+                        (callback) no es el objeto que se espera que se emplee.</li>
+                </ul>
+                <script>
+                    window.nombre = "Ventana";
+                    this.tipo = "Navegador";//También es el objeto Window
+
+                    let objeto = {
+                        nombre: "Un objeto",
+                        tipo: "objeto",
+                        fun (){ document.write("fun() nombre="+this.nombre+"<br>")},
+                        fun2 : ()=>document.write("fun2() nombre="+this.nombre+"<br>"),
+                        fun3 (timeout = 1000) { 
+                            setTimeout(()=>console.log("fun3 nombre="+this.nombre),timeout);
+                        }
+                    }
+
+                    function usoThis() {
+                        document.write("Empleo <code>this</code> nombre:" + this.nombre + " tipo=" + this.tipo + "<br>");//La referencias van al objeto Window
+                    }
+
+                    usoThis();
+
+                    objeto.usoThis = usoThis;
+                    objeto.usoThis();//Ahora la referencia this es al objeto
+                    
+                    let flecha = ()=> document.write("función flecha nombre="+this.nombre+" y tipo="+this.tipo+ "<br>");
+
+                    objeto.flecha = flecha;
+
+                    flecha();
+                    objeto.flecha();//La función flacha mantiene el contexto donde se declaró
+                    objeto.fun();//Como es una función regular muestra el contexto de llamada
+                    objeto.fun2();//La función flecha no emplea el contexto de llamada sino el de definición.
+                    objeto.fun3();//Abre la consola para ver el resultado
+
+                </script>
+            </article>
+        </section>
+
+        <section><br><a href="index.html">Inicio</a><br></section>
+    </main>
+    <footer>
+        <p>Servicios y Aplicaciones Telemáticas</p>
+    </footer>
+</body>
+
 </html>
-
