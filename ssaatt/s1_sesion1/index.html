@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="mi.css" />
+
+    <title>Seminario 1 Generación de código HTML</title>
+  </head>
+  <body>
+    <h1 class="estiloso">Seminario 1 Generación de código HTML</h1>
+    
+    
+ Tipos de encabezado:
+<h1>Cabecera 1</h1> 
+<h2>Cabecera 2</h2> 
+ <h3>Cabecera 3</h3> 
+<h4>Cabecera 4</h4> 
+<h5>Cabecera 5</h5> 
+<h6>Cabecera 6</h6> 
+
+    
+    
+    
+    
+    
+    <img border="5px" src="logo.png" width="20%" height="20%" alt="logotipo uja de la universidad de jaen"/>
+    <p>Este seminario se dedica al<br clear="left"> código HTML en su versión 5</p>
+    <p>Este es otro p&aacute;rrafo</p>
+
+    <p>Entrada a <a href="http://labtelema.ujaen.es/ssmm/login.php?user=1&pass=123" target="_blank">Ilias</a></p>
+    <ul type=square>
+      <li><a href="#section2">Secci&oacute;n 2</a></li>
+      <li><a href="#section3">Secci&oacute;n 3</a></li>
+      <li><a href="#especiales">Estilos especiales</a></li>
+      <li><a href="#tablas">Ejemplos de tablas</a></li>
+      <li><a href="#form">Formularios</a></li>
+    </ul>
+<h2><a name="section2">Secci&oacute;n 2</a></h2>
+    <p>Esto es un ejemplo de una lista ordenada</p>
+    <ol start=3>
+      <li type=i>Primer elemento</li>
+      <li  type=i value=10>Segundo elemento</li>
+      <li type=i >Tercer elemento</li>
+    </ol>
+    <h2><a name="section3">Secci&oacute;n 3</a></h2>
+        <p>Esto es un ejemplo de una lista no ordenada</p>
+    <ul type=square>
+      <li>Servicios y <em>aplicaciones</em> telem&aacute;ticas</li>
+      <li>Fundamentos de <strong>Redes</strong> de Telecomunici&oacute;n</li>
+    </ul>
+    <dl>
+      <dt>Principio de Arqu&iacute;mides</dt>
+      <dd>Todo cuerpo sumergido...</dd>
+      </dl>
+      <h3>Ejemplo de c&oacute;digo fuente</h3>
+      <code>if(i==1){ return false;}</code>
+      <p>if(i==1){ return false;}</p>
+      <h3>Ejemplo de uso de comillas</h3>
+      <p>ayer Manolo me dijo: <q>No te vas a creer lo que ...</q></p>
+      <h2 name="otros">Otros ejemplos de &eacute;nfasis</h2>
+      <tt>Esta es la <b>salida</b> como si <i>fuera</i> escrita po<sub>r</sub> una <strike>m&aacute;quina de escribir</strike></tt>
+<h2><a name="especiales">Caracteres especiales</a></h2>
+<p>No debes escribir &amp; dentro del c&oacutedigo HTML ya que podr&iacute; en errores de interpretaci&oacute;</p>
+Hola que tal&nbsp;
+<h2><a name="tablas">ejemplo de tablas</a></h2>
+<table border="4px" cellspacing="10px">
+<caption>Tabla de ejemplo</caption>
+<tr>
+  <th>Orden</th>
+  <td bgcolor="green">1</td>
+  <td valign="bottom">2</td>
+  <td> 2341234<br/><b>1234</b>234</td>
+  </tr>
+  <tr>
+    <th>Cantidad</th>
+    <td valign="top">23929</td>
+    <td> 2341234</td>
+    <td> 23412asdfasdf4</td>
+  </tr>
+</table>
+<h2><a name="form">Formularios</a></h2>
+<form action="http://labtelema.ujaen.es/ssmm/login.php" method="post">
+  <p>Usuario:<input type="text" name="user"/></p>
+  <p>Clave:<input type="password" name="pass"/></p>
+
+  <input type="submit" value="Enviar"/>
+
+</form>
+  </body>
+</html>

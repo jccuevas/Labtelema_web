@@ -1,0 +1,90 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+header, section,footer,aside,nav,article,figure,figcaption,hgroup {
+  display: block;}
+
+body{
+  text-align: center;
+}
+h1{
+  font: bold 20px verdana, sans-serif;
+}
+
+h2{
+  font: bold 14 px verdana, sans-serif;
+}
+
+#mainbox{
+  width: 960px;
+  margin: 15px auto;
+  text-align: left;
+}
+
+#cabecera{
+	font-family:Verdana, Geneva, sans-serif;
+  color: white;
+  background: #444444;
+  border: 1px solid #999999;
+  padding: 20px;
+}
+
+#menu{
+  background: #cccccc;
+  padding: 5px 15px;
+
+}
+
+#menu li{
+  display: inline-block;
+  list-style: none;
+  padding: 5px;
+  font: bold 14px verdana, sans-serif;
+}
+
+#main_area{
+  float: left;
+  width: 660px;
+  margin: 20px;
+
+}
+
+#sidebar{
+  float: left;
+  width: 220px;
+  margin: 20px 0px;
+  padding: 20px;
+  background: #cccccc;
+}
+
+#footer{
+  clear: both;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #999999;
+}
+
+article.main{
+  padding: 10px;
+  background: #aaaaaa;
+  border: 5px solid #000000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+a:link,a:visited{
+  color: black;
+}
+a:hover{
+  color: grey;
+}
+
+img{
+  width: 90%;
+  border: 1px solid #000000;
+};

@@ -1,0 +1,243 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 feb. 2020, 20:13:25
+    Author     : Juan Carlos Cuevas Martínez
+*/
+*{
+    font-family: verdana;
+}
+
+body{
+    margin: auto;
+    width: 80%;
+}
+a{
+    color:black;
+    text-decoration: none;
+    
+}
+a:visited{
+    color:black;
+}
+
+a:hover{
+    color:darkred;
+}
+
+a.anchor{
+    padding: 2px;
+    display: inline-block;
+    width: 100%;
+    background-color: lightgray;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    
+}
+
+a.anchor:visited{
+    color:white;
+}
+
+a.anchor:hover{
+    color:gray;
+}
+
+
+
+header{
+    text-align: center;
+}
+header p{
+    font-style: italic;
+}
+#contenedor{
+    background-color: lightgrey;
+    padding: 10px;
+    width:80%;
+    margin: 20px 10%; 
+    height: 250px;
+    overflow: auto;
+}
+
+var{
+    font-size: 1em;
+    font-family: monospace;
+}
+em{
+    font-weight: bold;
+}
+
+main {
+    padding: 0;
+    width: 100%;
+}
+main > p{
+    font-style: italic;
+    text-align: center;
+}
+
+li p{
+    font-size: 0.9em;
+    font-weight: bold;
+}
+li li{
+    font-style: italic;
+    font-size: 0.8;
+}
+section{
+    padding: 5px;
+    overflow: auto;
+       
+}
+section article{
+
+    height: 30%;
+    padding: 5px;
+    margin-top: 10px;
+    overflow: auto;
+     background-color: lightgrey;
+
+}
+
+
+aside{
+    float:right;
+    overflow: auto;
+    width: 30%;
+    padding: 5px;
+    border: 5px inset red;
+    min-width: 250px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+aside::after{
+    clear: both;
+    display: table;
+}
+
+.resaltar{
+    color:red;
+    font-weight: bold;
+}
+
+input{
+    margin-top: 5px;
+}
+
+
+button.dinamico{
+    position:relative;
+    left:0;
+    top:0;
+ 
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 10px 10px 5px grey;
+    margin-top: 5px;
+    transition: left 0.5s;
+}
+
+button.dinamico_wide{
+   
+    width: 250px;
+  
+}
+
+button.dinamico:active{
+    z-index: 1000;
+    border: 2px dotted red;
+    font-weight: bold;
+}
+
+button.dinamico:focus{
+    margin-top: 5px;
+    border: 2px dotted red;
+
+}
+
+button.dinamico:hover{
+    position:relative;
+    left:25px;
+    z-index: 1000;
+    border: 2px solid red;
+
+}
+
+table{
+   
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+td, th{
+     border: 2px solid black;
+     padding: 2px;
+}
+
+th{
+    font-weight: bold;
+    text-align: left;
+}
+
+input.float{
+    display: inline-box;
+    float:right;
+}
+
+input[type="number"]{
+    width: 75px;
+    margin-left: 2px;
+}
+
+input.float::after{
+    display: table;
+    clear: both;
+}
+
+fieldset label{
+    height: 25px;
+    display: block;
+    min-width: 100px;
+    margin-right: auto;
+    font-weight: bold;
+    clear: right;
+}
+
+code{
+    color:blue;
+}
+
+.ejemplo{
+    border: 2px solid darkgray;
+    padding: 10px;
+    width:40%;
+    margin: 10px 10px; 
+    height: 250px;
+    min-width: 250px;
+    max-width: 400px;
+    overflow: auto;
+    box-shadow: 2px 2px;
+    float:left;
+}
+
+.ejemplo::before{
+    clear:left;
+    display: table;
+}
+
+footer{
+    margin-top: 10px;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    font-size: 0.7em;
+    color:white;
+    background-color: gray;
+   box-sizing: border-box;
+}

@@ -1,0 +1,154 @@
+
+:root{
+--standard_margin: 5px;
+--standard_margin_big: 50px;
+}
+
+html{
+  background: lightgrey;
+}
+    body {
+      counter-reset: section;
+      background: black;
+      color: white;
+      margin: 0px auto;
+      padding: 10px;
+      width: 800px;
+      height: auto;
+      font-family: verdana;
+    }
+
+    h1 {
+      padding: 2px;
+      font-size: 1.5em;
+      background-color: darkgrey;
+      counter-reset: subsection;
+    }
+
+    h1::before {
+      counter-increment: section;
+      content: "Ejercicio " counter(section) ". ";
+    }
+
+    h2{
+      font-size: 1.2em;
+
+    }
+    h3{
+      font-size: 1.1em;
+      color: lightgrey;
+
+    }
+
+    h2::before {
+      counter-increment: subsection;
+      content: counter(section) "." counter(subsection) " ";
+    }
+    ol {
+      counter-reset: lista;
+    }
+
+    li ol{
+      counter-reset: sublista1;
+      padding-left: var(--standard_margin);
+    }
+
+    li::before {
+      counter-increment: lista;
+      content: "Elemento " counter(lista) ". ";
+    }
+
+    ol.biblio {
+      list-style: none;
+      counter-reset: biblio;
+    }
+
+    li.biblio {
+      margin-left: 0px;
+      margin-bottom: var(--standard_margin_big);
+      padding: 0px;
+    }
+
+    li.biblio::before {
+      counter-increment: biblio;
+      content: "[" counter(biblio) "] ";
+
+    }
+
+    li ol li{
+      margin-left: var(--standard_margin);
+      padding-left: var(--standard_margin);
+      list-style: none;
+    }
+
+    li ol li::before {
+      counter-increment: sublista1;
+      content: counter(lista) "." counter(sublista1) " ";
+    }
+
+h2 a{
+  text-decoration: none;
+  color: inherit;
+}
+h2 a:hover{
+
+  color: red;
+}
+h2+p{
+  color:red;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+p p{
+  position: inherit;
+}
+
+table, th, td{
+  border: 2px solid red;
+  border-collapse: collapse;
+  text-align: center;
+
+
+}
+
+td{
+  padding: 2px;
+}
+
+th{
+  font-style: bold;
+  background-color: green;
+}
+
+#div_tutorias{
+  padding: 5px;
+}
+
+#table_tutorias{
+  border: 2px solid green;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 5px auto;
+}
+
+#table_tutorias th{
+  border: 2px solid blue;
+  background-color: blue;
+}
+
+#table_tutorias td{
+  min-width: 100px;
+  border: 2px solid blue;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td.column_timetable{
+
+  color: black;
+  background-color: white;
+}
+
+td.tutoria{
+  background-color: red;
+}

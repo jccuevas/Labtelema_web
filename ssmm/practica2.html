@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Servicios Móviles - Práctica 2</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://labtelema.ujaen.es/css/styles.css" type="text/css" media="screen" />
+<body>
+
+<div class="topnav">
+  <a href="http://labtelema.ujaen.es">Principal</a>
+<<a href="http://labtelema.ujaen.es/ssmm/index.html">Servicios m&oacute;viles</a>
+</div>
+
+<div class="content">
+  <h2>Servicios móviles</h2>
+  <h3 align="center">Pr&aacute;ctica 2</h3>
+        <p>La aplicación desarrollada deber&aacute; hacer peticiones a autentica.php. Podrán hacer peticiones tanto con m&eacute;todo GET como POST. A continuaci&oacute;n se muestra un ejemplo:</p>
+
+		<p><a href="http://labtelema.ujaen.es/ssmm/autentica.php?user=user1&pass=12345">http://labtelema.ujaen.es/ssmm/autentica.php?user=user1&pass=12345</a></p>
+		<h4>Respuesta:</h4>
+
+		<pre>SESSION-ID=SIDuser1YmU0NjNlNWZlOWJjMzNhNTY3OGQ0Yjk5MTRiNmY4MmIzZjg4NWMxZA==&EXPIRES=2018-10-23-12-25-37</pre>
+		<p>La respuesta del servidor se debe analizar y extraer el identificador de sesi&oacute;n (SESSION-ID) y la fecha de expiraci&oacute;n (EXPIRES)</p>
+        
+        <p>Formulario de ejemplo para probar Pr&aacute;ctica 2</p>
+        <p align="center" style="text-align: center">
+        <form method="post" action="login.php">
+          Usuario:<br/>
+          <input type="text" name="user" size="10">
+          <br />
+          Clave: <br/>
+          <input type="password" name="pass" size="10">
+          <br/>
+          <br/>
+          <input type="submit"/>
+        </form>
+</div>
+
+<div class="footer">
+  <p><a href="https://www.uja.es/departamentos/ingtel/" title="Dpto. Ingenier&iacute;a de Telecomunicaci&oacute;n" target="_blank">Dpto. Ingenier&iacute;a de Telecomunicaci&oacute;n</a></p>
+  <p><a href="https://epsl.uja.es/" title="E. P. S. de Linares">E. P. S. de Linares</a></p>
+  <p><a href="www.ujaen.es" title="Universidad de Ja&eacute;n" target="_blank">Universidad de Ja&eacute;n</a></p>
+  <p>Campus Cient&iacute;fico Tecnol&oacute;gico de Linares <br/>
+Avenida de la Universidad (Ronda Sur), s/n 23700, Linares</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="estilos/normalize.css">
+        <link rel="stylesheet" href="estilos/main.css">
+        <title>Introducción a JavaScript - cadenas de texto</title>
+
+
+    </head>
+    <body>
+        <header>
+            <h1>Introducción a JavaScript - Cadenas de texto</h1>
+        </header>
+        <main>
+            <p>En este ejemplo se muestran ejemplos sencillos del empleo de cadenas de texto en JavaScript</p>
+            <section>
+                <h2>Cadenas y conversión</h2>
+                <article>
+
+                    
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+let u;
+const x = 5;
+const y = 10;
+let cad = "Suma";
+document.write("&lt;code&gt;cad + x + y&lt;/code&gt; sería: " + cad + x + y + "&lt;br&gt;");
+document.write("&lt;code&gt;cad + (x + y)&lt;/code&gt; sería: " + cad + (x + y) + "&lt;br&gt;");
+document.write("&lt;code&gt;x.toString()&lt;/code&gt; sería: " + x.toString() + "&lt;br&gt;");
+document.write("&lt;code&gt;String(x)&lt;/code&gt; sería: " + String(x) + "&lt;br&gt;");
+document.write("&lt;code&gt;String(u)&lt;/code&gt; sería: " + String(u) + "&lt;br&gt;");
+try {
+  document.write("&lt;code&gt;u.toString()&lt;/code&gt; sería: " + u.toString() + "&lt;br&gt;");
+} catch (e) {
+  document.write("Como u es undefined daría un TypeError si no estuviera en un try-catch<br>El mensaje del error es:" + e.message);
+}
+                        </pre>
+                    </aside>
+                    <p>
+                        <script>
+                            let u;
+                            const x = 5;
+                            const y = 10;
+                            let cad = "Suma";
+                            document.write("<code>cad + x + y</code> sería: " + cad + x + y + "<br>");
+                            document.write("<code>cad + (x + y)</code> sería: " + cad + (x + y) + "<br>");
+                            document.write("<code>x.toString()</code> sería: " + x.toString() + "<br>");
+                            document.write("<code>String(x)</code> sería: " + String(x) + "<br>");
+                            document.write("<code>String(u)</code> sería: " + String(u) + "<br>");
+                            try {
+                                document.write("<code>u.toString()</code> sería: " + u.toString() + "<br>");
+                            } catch (e) {
+                                document.write("Como u es undefined daría un TypeError si no estuviera en un try-catch<br>El mensaje del error es:" + e.message);
+                            }
+                        </script>
+                    </p>
+                </article>
+            </section>
+            <section>
+                <h2>Propiedades y métodos de las cadenas</h2>
+                <article>
+                    <h3>Longitud</h3>
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+&lt;form oninput="longitud.value=user.value.length"&gt;
+    &lt;label&gt;Usuario: &lt;input id="cadena" type="text" name="user" onchange="forms"&gt;&lt;/label&gt;&lt;br&gt;
+    &lt;label&gt;Longitud:&lt;output name="longitud" for="cadena"&gt;&lt;/output&gt;&lt;/label&gt;      
+&lt;/form&gt;
+                        </pre>
+                    </aside>
+                    <form oninput="longitud.value=user.value.length">
+                        <label>Usuario: <input id="cadena" type="text" name="user" onchange="forms"></label><br>
+                        <label>Longitud:<output name="longitud" for="cadena"></output></label>      
+                    </form>
+                </article>
+                <article>
+                    <h3>Búsqueda de subcadenas</h3>
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+cad = "¡Busca el oro! ¡Quiero oro!";
+let subcadena = "oro";
+var pos = cad.indexOf(subcadena);
+document.write("Buscamos con indexOf() en la variable &lt;var&gt;cad&lt;/var&gt; que contiene \"&lt;i&gt;" 
+    + cad 
+    + "\"&lt;/i&gt; la primera aparición de &lt;i&gt;\"" 
+    + subcadena 
+    + "\"&lt;/i&gt; y está en la posición &lt;em&gt;" 
+    + pos 
+    + "&lt;/em&gt;&lt;br&gt;");
+pos = cad.indexOf(subcadena,11);
+document.write("Buscamos con indexOf() y offset 11 en la variable &lt;var&gt;cad&lt;/var&gt; que contiene \"&lt;i&gt;" 
+    + cad + "\"&lt;/i&gt; la primera aparición de &lt;i&gt;\"" 
+    + subcadena 
+    + "\"&lt;/i&gt; y está en la posición &lt;em&gt;" 
+    + pos 
+    + "&lt;/em&gt;&lt;br&gt;");
+pos = cad.lastIndexOf(subcadena);
+document.write("Buscamos con lastIndexOf() en la variable &lt;var&gt;cad&lt;/var&gt; que contiene \"&lt;i&gt;" 
+    + cad 
+    + "\"&lt;/i&gt; la última aparición de &lt;i&gt;\"" 
+    + subcadena 
+    + "\"&lt;/i&gt; y está en la posición &lt;em&gt;" 
+    + pos 
+    + "&lt;/em&gt;&lt;br&gt;");
+pos = cad.search(subcadena);
+document.write("Buscamos con search() en la variable &lt;var&gt;cad&lt;/var&gt; que contiene \"&lt;i&gt;" 
+    + cad 
+    + "\"&lt;/i&gt; la primera aparición de &lt;i&gt;\"" 
+    + subcadena 
+    + "\"&lt;/i&gt; y está en la posición &lt;em&gt;" 
+    + pos 
+    + "&lt;/em&gt;&lt;br&gt;");
+                        </pre>
+                    </aside>
+                    <p>
+                        <script>
+                            cad = "¡Busca el oro! ¡Quiero oro!";
+                            let subcadena = "oro";
+                            var pos = cad.indexOf(subcadena);
+                            document.write("Buscamos con indexOf() en la variable <var>cad</var> que contiene \"<i>" + cad + "\"</i> la primera aparición de <i>\"" + subcadena + "\"</i> y está en la posición <em>" + pos + "</em><br>");
+                            pos = cad.indexOf(subcadena, 11);
+                            document.write("Buscamos con indexOf() y offset 11 en la variable <var>cad</var> que contiene \"<i>" + cad + "\"</i> la primera aparición de <i>\"" + subcadena + "\"</i> y está en la posición <em>" + pos + "</em><br>");
+                            pos = cad.lastIndexOf(subcadena);
+                            document.write("Buscamos con lastIndexOf() en la variable <var>cad</var> que contiene \"<i>" + cad + "\"</i> la última aparición de <i>\"" + subcadena + "\"</i> y está en la posición <em>" + pos + "</em><br>");
+                            pos = cad.search(subcadena);
+                            document.write("Buscamos con search() en la variable <var>cad</var> que contiene \"<i>" + cad + "\"</i> la primera aparición de <i>\"" + subcadena + "\"</i> y está en la posición <em>" + pos + "</em><br>");
+                        </script>
+                    </p>
+                </article>
+                <article>
+                    <h3>Espresiones regulares</h3>
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+let output = document.getElementById("output");
+let ptexto = document.getElementById("texto");
+let texto = ptexto.innerHTML;
+let posicion = document.getElementById("posicion");
+function update(text) {
+    let regexp = new RegExp(text, 'i');
+    let pos = texto.search(regexp);
+    let otra = texto.slice(0, pos) 
+             + "&lt;span class='resaltar'&gt;" 
+             + texto.slice(pos, pos + text.length) 
+             + "&lt;/span&gt;" 
+             + texto.slice(pos + text.length, texto.length);
+    console.log("Posicion:" + pos);
+    posicion.innerHTML = pos;
+    output.innerHTML = "/" + text + "/i";
+    ptexto.innerHTML = otra;
+}
+                        </pre>
+                    </aside>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Más información aquí</a>
+                    <p id="texto">Busque patrones en este texto de ejemplo en que deberá o podrá buscar de manera independiente de las mayúsculas</p> 
+
+                    <form name="regex" action="#">
+                        <label>Usuario: <input id="cadenainput" type="text" name="expresion" ></label>
+                    </form>
+                    <button onclick="update(forms.regex.expresion.value)">Buscar</button>
+                    <p>Patrón: <span id="output"></span><br>
+                        Encontrado en la posición:<span id="posicion"></span></p> 
+                    <script>
+                        let output = document.getElementById("output");
+                        let ptexto = document.getElementById("texto");
+                        let texto = ptexto.innerHTML;
+                        let posicion = document.getElementById("posicion");
+                        function update(text) {
+                            let regexp = new RegExp(text, 'i');
+                            let pos = texto.search(regexp);
+                            let otra = texto.slice(0, pos) + "<span class='resaltar'>" + texto.slice(pos, pos + text.length) + "</span>" + texto.slice(pos + text.length, texto.length);
+                            console.log("Posicion:" + pos);
+                            posicion.innerHTML = pos;
+                            output.innerHTML = "/" + text + "/i";
+                            ptexto.innerHTML = otra;
+                        }
+                    </script>
+                </article>
+                <article>
+                    <h3>Extracción de partes</h3>
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+let recortar = document.getElementById("recortar").innerText;//Con HTMLElement no extraigo las marcas, si las hubiera, solo en texto
+let recorte1 = document.getElementById("recorte1");
+let recorte2 = document.getElementById("recorte2");
+let recorte3 = document.getElementById("recorte3");
+function recorta(a, b) {
+    recorte1.innerHTML = recortar.slice(a, b);
+    recorte2.innerHTML = recortar.substring(a, b);
+    recorte3.innerHTML = recortar.substr(a, b);
+
+}
+                        </pre>
+                    </aside>
+                    <p>El ejemplo anterior también se puede ver el efecto del método <code>slice(incio,fin)</code></p> 
+                    <p id="recortar">Este texto se podrá recortar con las tres funciones típicas</p> 
+
+                    <form name="trozos" action="#">
+                        <fieldset>
+                            <legend>Indique el principio y fin para recortar</legend>
+                            <label>Inicio(a) <input id="inicio" type="number" name="inicio" ></label><br>
+                            <label>Final(b) <input id="final" type="number" name="final" ></label><br>
+                        </fieldset>
+                    </form>
+                    <button onclick="recorta(forms.trozos.inicio.value, forms.trozos.final.value)">Buscar</button>
+                    <p>Recorte con <code>slice(a,b)</code><em id="recorte1"></em></p>
+                    <p>Recorte con <code>substring(a,b)</code><em id="recorte2"></em></p>
+                    <p>Recorte con <code>substr(a,b)</code><em id="recorte3"></em></p>
+
+                    <script>
+                        let recortar = document.getElementById("recortar").innerText;//Con HTMLElement no extraigo las marcas, si las hubiera, solo en texto
+                        let recorte1 = document.getElementById("recorte1");
+                        let recorte2 = document.getElementById("recorte2");
+                        let recorte3 = document.getElementById("recorte3");
+                        function recorta(a, b) {
+                            recorte1.innerHTML = recortar.slice(a, b);
+                            recorte2.innerHTML = recortar.substring(a, b);
+                            recorte3.innerHTML = recortar.substr(a, b);
+
+                        }
+                    </script>
+                    <article>
+                        <h3>Reemplazar</h3>
+                        <aside>
+                            <h4>&lt;script&gt;</h4>
+                            <pre>
+var str = "Servicios y Aplicaciones Telemáticas&lt;br&gt;";
+document.write(str.replace("y", "&"));
+document.write(str.replace("APLICACIONES", "Programas"));//Este falla
+document.write(str.replace(/APLICACIONES/i, "Programas"));//Este sí
+document.write(str.replace(/s/g, ""));
+                            </pre>
+                        </aside>
+                        <p>Ejemplo de reemplazo <code>replace(buscado,nuevo)</code></p> 
+
+                        <script>
+                            var str = "Servicios y Aplicaciones Telemáticas<br>";
+                            document.write(str.replace("y", "&"));
+                            document.write(str.replace("APLICACIONES", "Programas"));//Este falla
+                            document.write(str.replace(/APLICACIONES/i, "Programas"));//Este sí
+                            document.write(str.replace(/s/g, ""));
+                        </script>
+                    </article>
+                </article>
+                <article>
+                    <h3>Convertir una cadena en un array</h3>
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+let separar = document.getElementById("separar").innerText;
+let separados = document.getElementById("separados");
+function separa(a) {
+    console.log("Separar por " + a);
+    let trozos = separar.split(a);
+    separados.innerHTML = "";
+    for (let trozo of trozos) {
+        separados.innerHTML = separados.innerHTML + trozo + "&lt;sbr&gt;";
+    }
+}
+                        </pre>
+                    </aside>
+                    <p>Ejemplo de conversión de cadenas en arrays con <code>split(separador)</code></p>
+                    <code id="separar">{1,2,3};{2,4,5};{56,12,45}</code>
+                    <p id="separados"></p>
+                    <form name="separar" action="#">
+                        <fieldset>
+                            <legend>Indique el separador</legend>
+                            <label>Separador <input id="separador" type="text" name="separador" ></label><br>
+                        </fieldset>
+                    </form>
+                    <button onclick="separa(forms.separar.separador.value)">Separar</button>
+                    <script>
+                        let separar = document.getElementById("separar").innerText;
+                        let separados = document.getElementById("separados");
+                        function separa(a) {
+                            console.log("Separar por " + a);
+                            let trozos = separar.split(a);
+                            separados.innerHTML = "";
+                            for (let trozo of trozos) {
+                                separados.innerHTML = separados.innerHTML + trozo + "<br>";
+                            }
+                        }
+                    </script>
+                </article>
+            </section>
+
+            <section><br><a href="index.html">Inicio</a><br></section>
+        </main>
+        <footer><p>Servicios y Aplicaciones Telemáticas</p></footer>
+    </body>
+</html>
+

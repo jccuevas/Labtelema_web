@@ -1,0 +1,260 @@
+@charset "utf-8";
+/* CSS Document */
+* {font-family: Montserrat,sans-serif;}
+
+
+body{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    padding: 10px;
+}
+.header_left{
+    display: inline-block;
+}
+.header_center{
+    margin-left: 20px;
+    display: inline-block;
+    font-size: 1em;
+    text-align: center;
+}
+
+.menu{
+
+    background-color: #006D38;
+    color:white;
+}
+.menu_item{
+    padding: 5px;
+    list-style: none;
+    display: inline-block;
+    min-width: 100px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.menu_item:hover {
+    color:white;
+    text-decoration: none;
+    background-color: #004921;
+}
+
+.menu_item a{
+    color:white;
+    text-decoration: none;
+}
+
+.menu_item a:active {
+    color:white;
+    text-decoration: none;
+
+}
+
+.menu_item a:visited{
+    color:white;
+    text-decoration: none;
+
+}
+
+.menu_item a:hover{
+    color:white;
+    text-decoration: none;
+
+}
+section{
+    padding: 10px;
+}
+
+
+section{
+    padding: 5px;
+    overflow: auto;
+       
+}
+
+.footer_main{
+    border-top: 1rem #006d38 solid;
+    padding: 10px;
+    background-color: #ececed;
+    line-height: 1.5;
+    overflow: auto;
+}
+
+.footer_left{
+    display: inline-block;
+    margin-left: 20px;
+} 
+.footer_center{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer_right{
+    float:right;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:#006D38;
+
+}
+
+a:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color:#004921;
+
+}
+
+section article{
+    height: 30%;
+    padding: 5px;
+    margin-top: 10px;
+    overflow: auto;
+    background-color: #F5F6F6;
+    border-left: 5px solid #004921;
+}
+
+aside{
+    float:right;
+    overflow: auto;
+    width: 30%;
+    padding: 5px;
+    border: 5px inset red;
+    min-width: 250px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+aside::after{
+    clear: both;
+    display: table;
+}
+
+li{
+    line-height: 1.5;
+}
+
+li p{
+    font-size: 0.9em;
+    font-weight: bold;
+}
+li li{
+    font-style: italic;
+    font-size: 0.8;
+}
+.resaltar{
+    color:red;
+    font-weight: bold;
+}
+
+input{
+    margin-top: 5px;
+}
+
+
+button.dinamico{
+    position:relative;
+    left:0;
+    top:0;
+ 
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 10px 10px 5px grey;
+    margin-top: 5px;
+    transition: left 0.5s;
+}
+
+button.dinamico_wide{
+   
+    width: 250px;
+  
+}
+
+button.dinamico:active{
+    z-index: 1000;
+    border: 2px dotted red;
+    font-weight: bold;
+}
+
+button.dinamico:focus{
+    margin-top: 5px;
+    border: 2px dotted red;
+
+}
+
+button.dinamico:hover{
+    position:relative;
+    left:25px;
+    z-index: 1000;
+    border: 2px solid red;
+
+}
+
+table{
+   
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+td, th{
+     border: 2px solid black;
+     padding: 2px;
+}
+
+th{
+    font-weight: bold;
+    text-align: left;
+}
+
+input.float{
+    display: inline-box;
+    float:right;
+}
+
+input[type="number"]{
+    width: 75px;
+    margin-left: 2px;
+}
+
+input.float::after{
+    display: table;
+    clear: both;
+}
+
+fieldset label{
+    height: 25px;
+    display: block;
+    min-width: 100px;
+    margin-right: auto;
+    font-weight: bold;
+    clear: right;
+}
+
+code{
+    color:blue;
+}
+
+.ejemplo{
+    border: 2px solid darkgray;
+    padding: 10px;
+    width:40%;
+    margin: 10px 10px; 
+    height: 250px;
+    min-width: 250px;
+    max-width: 400px;
+    overflow: auto;
+    box-shadow: 2px 2px;
+    float:left;
+}
+
+.ejemplo::before{
+    clear:left;
+    display: table;
+}

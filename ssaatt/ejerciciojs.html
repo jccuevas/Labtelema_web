@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Servicios y Aplicaciones Telem&aacute;ticas - Ejercicio JavaScript</title>
+    <link rel="stylesheet" href="./estilos/list.css">
+  </head>
+  <body>
+    <script type="text/javascript">
+      function myAlert(message){
+
+        window.alert(message);
+      }
+      //var origin = document.getElementById('demo');
+      var newdest= origin;
+      function scolling(){
+        var origin = document.getElementById('demo')
+        window.scrollTo(0,origin.offsetTop );
+
+        newdest=origin.next()
+
+      }
+
+      function ejercicio2(){
+        document.write("Saludos, alumnado de segundo");
+      }
+    </script>
+    <h1>JavaScript</h1>
+    <h2>Escribe un programa para que aparezca una ventana emergente (alert) con el mensaje: “Saludos, alumnado de segundo”.</h2>
+    <h3> Una forma: formulario y en onClick</h3>
+    <form name="alertform"> Introduce tu nombre:
+      <input type="button" value= "alarma"
+     onClick="window.alert('Saludos, alumnado de segundo');">
+
+     </form>
+     <h3> Otra forma: funci&oacute;n en &lt;button&gt;</h3>
+     <button type="button" name="alarma" onClick="myAlert('Saludos, alumnado de segundo')">Alarma</button>
+     <h2>Escribe un programa para que aparezca en el navegador el mensaje: “Saludos, alumnado de segundo”.</h2>
+      <p>
+        <script>
+        ejercicio2();
+        </script>
+      </p>
+      <h2>Escribe un programa que escriba en la pantalla el resultado de sumar 4 + 1.</h2>
+      <p>
+        <script>
+        var num1=4+1;
+        document.write('Sumando 4 + 1 ='+num1);
+        </script>
+      </p>
+      <h2>Escribe un programa que pida el nombre del usuario con un prompt y escriba un texto que diga “Hola” más el nombreUsuario”. Ayuda para recibir datos de un usuario utilizando el objeto prompt:
+      var nombreUsuario=prompt(“Introduce nombre”);</h2>
+      <p id="ejercicio4">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function pide(){
+        var nombreUsuario=prompt('Introduce nombre');
+        document.getElementById("ejercicio4").innerHTML=nombreUsuario;
+
+      }
+      </script>
+      <button type="button" name="button" onclick="pide()">Pulse aqu&iacute;</button><br>
+
+      <h2>Escribe un programa que pida dos números y escriba el resultado de sumar estos dos números.</h2>
+      <p id="ejercicio5">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function suma(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+        var numero2=Number(prompt('Introduce un número','0'));
+        var suma= numero1+numero2;
+        document.getElementById("ejercicio5").innerHTML="Suma de " + numero1 + "+" + numero2 + "=" + suma;
+      }
+      </script>
+      <button type="button" name="button" onclick="suma()">Sumar dos n&uacute;meros</button><br>
+
+      <h2>Escribe un programa que pida dos números y escriba en la pantalla cual es el mayor.</h2>
+      <p id="ejercicio6">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function compara2(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+        var numero2=parseInt(prompt('Introduce un número','0'));
+
+        if(numero1!=numero2){
+          document.getElementById("ejercicio6").innerHTML= numero1 + ((numero1>numero2)?' es mayor que ':' es menor que ') + numero2;
+        }else {
+          document.getElementById("ejercicio6").innerHTML= "Son iguales";
+        }
+      }
+      </script>
+      <button type="button" name="button2" onclick="compara2()">Compara dos n&uacute;meros</button><br>
+      <h2>Escribe un programa que pida 3 números y escriba en la pantalla el mayor de los tres (usa funciones).</h2>
+      <p id="ejercicio7">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function mayorde3(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+        var numero2=parseInt(prompt('Introduce un número','0'));
+        var numero3=parseInt(prompt('Introduce un número','0'));
+
+        if(numero1 > numero2 && numero1 > numero3){
+          document.getElementById("ejercicio7").innerHTML = numero1 + ' es el mayor';
+        }else if(numero2 > numero1 && numero2 > numero3){
+          document.getElementById("ejercicio7").innerHTML = numero2 + ' es el mayor';
+        }else if(numero3 > numero1 && numero3 > numero2){
+          document.getElementById("ejercicio7").innerHTML = numero3 + ' es el mayor';
+        } else {
+          document.getElementById("ejercicio7").innerHTML = 'Todos son iguales';
+        }
+      }
+      </script>
+      <button type="button" name="button2" onclick="mayorde3()">El mayor de tre n&uacute;meros</button><br>
+      <h2>Escribe un programa que pida un número y diga si es par (usa funciones).</h2>
+      <p id="ejercicio8">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function esPar(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+
+        if(!isNaN(numero1)){
+          document.getElementById("ejercicio8").innerHTML = ((numero1%2)==0)?'Es par':'Es impar';
+        }
+        else {
+          alert("No ha indroducido un número");
+        }
+      }
+      </script>
+      <button type="button" name="button2" onclick="esPar()">¿Es par?</button><br>
+      <h2>Escribe un programa que pida una frase y escriba cuantas veces aparece la letra n (usa funciones).</h2>
+      <p id="ejercicio9">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function cuentaN(){
+        var frase=prompt('Frase...','Hola no digo nada');
+        var offset=0;
+        var found=0;
+        var pos=0;
+
+        while((pos=frase.indexOf('n',offset))!=-1){
+          found++;
+          offset=pos+1;
+        }
+        document.getElementById("ejercicio9").innerHTML = (found==0)?'No se han encontrado \"n\"':'Se han encontrado '+found+" \"n\"";
+
+      }
+      </script>
+      <button type="button" name="button2" onclick="cuentaN()">Cuenta las 'n' en una frase</button><br>
+      <h2>Escribe un programa que pida una frase y escriba las vocales que aparecen (usa funciones).</h2>
+      <p id="ejercicio10">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function cuentaVocales(){
+        var frase=prompt('Frase...','Hola no digo nada');
+        var found=0;
+        var pos=0;
+
+        console.log("Procesando: "+frase);
+
+        while((pos=frase.search(/[aeiou]/i))!=-1){
+          console.log("Posición ="+pos);
+          found++;
+          frase=frase.substr(pos+1);
+        }
+        document.getElementById("ejercicio10").innerHTML = (found==0)?'No se han encontrado vocales':'Se han encontrado '+found+" vocales";
+
+      }
+      </script>
+      <button type="button" name="button2" onclick="cuentaVocales()">Cuenta las vocales en una frase</button><br>
+
+      <h2>Escribe un programa que pida un número y nos diga si es divisible por 2, 3, 5 o 7 (sólo hay que comprobar si lo es por uno de los cuatro). A la hora de codificar el programa, utiliza funciones.</h2>
+      <p id="ejercicio11">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function divisible(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+
+        (numero1%2==0)?document.getElementById("ejercicio11").innerHTML = "Divisible entre 2":
+        (numero1%3==0)?document.getElementById("ejercicio11").innerHTML = "Divisible entre 3":
+        (numero1%5==0)?document.getElementById("ejercicio11").innerHTML = "Divisible entre 5":
+        (numero1%7==0)?document.getElementById("ejercicio11").innerHTML = "Divisible entre 7":
+        document.getElementById("ejercicio11").innerHTML ="No es divisible entre ningundo";
+
+      }
+      </script>
+      <button type="button" name="button2" onclick="divisible()">Divisible por 2, 3, 5 o 7</button><br>
+
+      <h2>Añadir al ejercicio anterior que nos diga por cuál de los cuatro es divisible (hay que decir todos por los que es divisible). A la hora de codificar el programa, utiliza funciones.</h2>
+      <p id="ejercicio12">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function divisiblePor(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+
+        var cad="Divisible entre ";
+        (numero1%2==0)?cad=cad +"2 ":"";
+        (numero1%3==0)?cad=cad + "3 ":"";
+        (numero1%5==0)?cad=cad + "5 ":"";
+        (numero1%7==0)?cad=cad + "7 ":"";
+        document.getElementById("ejercicio12").innerHTML =cad;
+
+      }
+      </script>
+      <button type="button" name="button2" onclick="divisiblePor()">Divisible por 2, 3, 5 y 7</button><br>
+      <h2>Escribir un programa que escriba en pantalla los divisores de un número dado (usando funciones).</h2>
+      <p id="ejercicio13">Aquí aparecer&aacute; el resultado</p>
+      <script>
+      function divisores(){
+        var numero1=parseInt(prompt('Introduce un número','0'));
+        var cad="Divisible entre ";
+        if(!isNaN(numero1)){
+          var resto=0;
+          for(var i=1;i<=numero1;i++){
+            resto=numero1%i;
+            (resto==0)?cad=cad +i:"";
+            if(resto==0 && i<numero1){
+             cad=cad+", ";
+            }
+          }
+         } else {
+           cad = "No es un número";
+         }
+
+        document.getElementById("ejercicio13").innerHTML = cad;
+      }
+      </script>
+      <button type="button" name="button2" onclick="divisores()">Divisores</button><br>
+      <h2>Escribe un programa para que oculte y muestre el contenido de un &lt;div&gt;.</h2>
+      <div id="panel" style="visibility: visible;background-color:blue;padding:var(--standard_margin_big);" ></div>
+      <script>
+      var panel = document.getElementById("panel");
+
+      function ocultar(){
+        var status= panel.style.visibility;
+        console.log("Estado del div: "+status);
+        if(status!="hidden"){
+          panel.style.visibility = "hidden";
+          document.getElementById("buttonHide").innerHTML="Mostrar";
+        } else{
+          panel.style.visibility = "visible";
+          document.getElementById("buttonHide").innerHTML="Ocultar";
+        }
+      }
+      </script>
+
+      <button id="buttonHide" type="button" onclick="ocultar()">Ocultar</button><br>
+      <h2>Codificar un programa que genere dinámicamente una tabla HTML y la muestre en un &lt;div&gt;.</h2>
+      <div id="tabla" style="overflow: auto;visibility: visible;background-color:blue;padding:var(--standard_margin_big);"></div>
+      <script>
+      var panel = document.getElementById("tabla");
+
+      function tabla(){
+        var rows=parseInt(prompt('Introduce el número de filas','2'));
+        var columns=parseInt(prompt('Introduce el número de columnas','4'));
+        var tabla = "<table style='boder-style:thin;'>";
+        for(var i=0;i<rows;i++){
+          tabla = tabla + "<tr>";
+          for(var j=0;j<columns;j++){
+            tabla = tabla + "<td>celda "+i+", "+j+"</td>";
+          }
+          tabla = tabla + "</tr>";
+        }
+        tabla = tabla + "</table>";
+        panel.innerHTML = tabla;
+      }
+      </script>
+
+      <button id="buttonTabla" type="button" onclick="tabla()">Generar tabla</button><br>
+      <h2>Escribe un programa que recoja un valor desde un formulario (usando un campo de texto &lt;dinput type=”text”&gt;) y lo muestre en un &lt;div&gt;.</h2>
+      <div id="divtexto" style="overflow: auto;visibility: visible;background-color:blue;padding:var(--standard_margin_big);"></div>
+      <script>
+      var panel = document.getElementById("divtexto");
+
+      function texto(message){
+
+        panel.innerHTML = message;
+      }
+      </script>
+      <a name="form"/>
+      <form action="#form">
+
+        <fieldset class="form-group">
+          <label for="exampleTextarea">Escriba un texto:</label>
+          <textarea class="form-control" id="textarea" rows="3"></textarea>
+        </fieldset>
+
+        <button type="submit" onclick="texto(document.getElementById('textarea').value)">Enviar</button>
+      </form>
+
+      <h2>Escribe un programa que llame al servicio situado en la dirección: <a href="https://ssaatt.com/whatsat/contactos/jemunoz" target="_blank">https://ssaatt.com/whatsat/contactos/jemunoz</a>. Muestra la respuesta en un &lt;div&gt;.</h2>
+      <div id="divHTTP" style="max-height: 200px;width: auto;overflow: auto;visibility: visible;background-color:blue;padding:var(--standard_margin_big);"></div>
+
+      <script>
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+     // Typical action to be performed when the document is ready:
+          document.getElementById("divHTTP").innerHTML = "<p>Carga con XMLHttpRequest:</p>"+xhttp.responseText;
+        }
+      };
+        function getResource(){
+          xhttp.open("GET", "https://ssaatt.com/whatsat/contactos/jemunoz", true);
+          xhttp.send();
+        }
+      </script>
+
+      <script>
+
+      var url='https://ssaatt.com/whatsat/contactos/jemunoz';
+
+      fetch(url)
+      .then(function(response) {
+        return response.json(); })
+      .then(function(data) {
+        document.getElementById("divHTTP").innerHTML = "<p>Precarga con fetch():</p>"+JSON.stringify(data);
+      });
+      </script>
+
+      <button id="buttonHTTP" type="button" onclick="getResource()">Cargar con XMLHttpRequest</button><br>
+
+      <h2>Escribe un programa que extraiga la información que devuelve el servicio del ejercicio 17 y lo muestre en una tabla.</h2>
+      <div id="divJSON" style="max-height: 200px;width: auto;overflow: auto;visibility: visible;background-color:blue;padding:var(--standard_margin_big);"></div>
+
+      <script>
+
+        var xhttp2 = new XMLHttpRequest();
+        xhttp2.onreadystatechange = function() {
+          /*
+          0: request not initialized
+          1: server connection established
+          2: request received
+          3: processing request
+          4: request finished and response is ready
+          */
+          if (this.readyState == 4 && this.status == 200) {
+      // Typical action to be perform2ed when the document is ready:
+          var data = JSON.parse(this.responseText);
+          //document.getElementById("divJSON").innerHTML = data;
+          var output="<table>";
+          output=output+"<tr>"
+          //Encabezados, nombres de los atributos del objeto
+          for(x in data[0]){
+            output=output+"<th>"+x+"</th>";
+          }
+          output=output+"</tr>"
+
+          for(i in data){
+            output=output+"<tr>"
+            for(x in data[i]){
+              output=output+"<td>"+data[i][x]+"</td>";
+            }
+            output=output+"</tr>"
+          }
+
+          output=output+"</table>"
+          document.getElementById("divJSON").innerHTML = output;
+        }
+      };
+        function getJSON(){
+          xhttp2.open("GET", "https://ssaatt.com/whatsat/contactos/jemunoz", true);
+          xhttp2.send();
+        }
+      </script>
+      <button id="buttonJSON" type="button" onclick="getJSON()">Cargar</button><br>
+
+    <h1>Ejercicio de evaluación</h1>
+    <h2>Existe un servicio en la dirección <a href="https://ssaatt.com/whatsat/tutorias" target="_blank">https://ssaatt.com/whatsat/tutorias</a> que devuelve el horario de tutorías de los profesores del departamento. Se pide:</h2>
+    <p>
+        <ul>
+          <li>Visualizar un horario en una página web que muestre la tutoría del profesor “jemunoz”.</li>
+          <li>La figura 1 puede usarse como ejemplo a la hora de presentar el calendario. Para realizar este ejercicio, utilizar todo lo aprendido en los seminarios de generación de contenidos y CSS.</li>
+        </ul>
+      </p>
+      <script type="text/javascript">
+      function rellenaTable(jsonTut){
+        var profesor = jsonTut[0].profesor;
+        var arrayTut= jsonTut[0]["tutorias"];
+
+        var output="";
+        var timetableText=jsonTut[0]["tutorias"];
+        for(h in timetableText){
+          for(x in timetableText[h]){
+            var hour=timetableText[h][x];
+            var parts= hour.split("-");
+            var tag1=x+"-"+parts[0];
+            var tag1Hour=parseInt(parts[0].split(":")[0]);
+            var tag2=x+"-"+parts[1];
+            var tag2Hour=parseInt(parts[1].split(":")[0]);
+            var diff=tag2Hour-tag1Hour;
+
+            var celda=document.getElementById(tag1);
+            celda.style.background="red";
+
+            if(diff>=2){//Hay más de una hora seguida
+              celda.rowSpan=diff;
+              celda.innerHTML="Tutoría";
+
+              for(var i=tag1Hour+1;i<tag2Hour;i++){
+                tag=x+"-"+i+":"+parts[0].split(":")[1];
+                console.log("Etiqueta horario: "+tag);
+                var cell=document.getElementById(tag);
+                cell.parentNode.removeChild(cell);
+              }
+            } else{
+              celda.innerHTML="Tutoría";
+            }
+
+
+          }
+        }
+        document.getElementById("ejercicio_eval").innerHTML="Profesor: "+profesor;
+        document.getElementById("ejercicio_eval_json").innerHTML=this.responseText;
+
+      }
+        var timetable = new XMLHttpRequest();
+        timetable.onreadystatechange=function(){
+
+          if(this.readyState == 4 && this.status == "200"){
+            //var test='[{"profesor":"jemunoz","tutorias":[{"martes":"10:30-13:30"},{"miercoles":"11:30-12:30"},{"jueves":"16:30-18:30"}]}]';
+            //var jsonTut = JSON.parse(test);
+            var jsonTut = JSON.parse(this.responseText);
+
+            rellenaTable(jsonTut)
+          } else if(this.readyState == 4 && this.status != "200"){
+            document.getElementById("div_tutorias").innerHTML="<p>Error en la petición</p>";
+          }
+        }
+
+      function loadTimeTable(){
+        timetable.open("GET","https://ssaatt.com/whatsat/tutorias",true);
+        timetable.send();
+      }
+
+      //Versión con fetch
+      function loadTimeTableFetch(){
+
+        fetch("https://ssaatt.com/whatsat/tutorias")
+        .then(function(response){
+          return response.json();
+        })
+        .then(function(data){
+          rellenaTable(data);
+        });
+
+      }
+      </script>
+
+      <h1>Ejercicio de evaluación</h1>
+      <h2>Existe un servicio en la dirección <a href="https://ssaatt.com/whatsat/tutorias" target="_blank">https://ssaatt.com/whatsat/tutorias</a> que devuelve el horario de tutorías de los profesores del departamento. Se pide:</h2>
+      <p>
+          <ul>
+            <li>Visualizar un horario en una página web que muestre la tutoría del profesor “jemunoz”.</li>
+            <li>La figura 1 puede usarse como ejemplo a la hora de presentar el calendario. Para realizar este ejercicio, utilizar todo lo aprendido en los seminarios de generación de contenidos y CSS.</li>
+          </ul>
+        </p>
+
+      <button id="buttonTimetable" type="button" onclick="loadTimeTable()">Cargar tutoría</button><br>
+      <button id="buttonTimetable2" type="button" onclick="loadTimeTableFetch()">Cargar tutoría (versión Fetch)</button><br>
+      <p id="ejercicio_eval_json">Aquí aparecer&aacute; el JSON</p>
+      <p id="ejercicio_eval">Aquí aparecer&aacute; el profesor</p>
+
+      <div id="div_tutorias">
+        <table id="table_tutorias">
+          <tr><th>Horario</th><th>Lunes</th><th>Martes</th><th>Mi&eacute;rcoles</th><th>Jueves</th><th>Viernes</th></tr>
+          <tr><td class="column_timetable" id="8:30">8:30-9:30</td><td id="lunes-8:30"></td><td id="martes-8:30"></td><td id="miercoles-8:30"></td><td id="jueves-8:30"></td><td id="viernes-8:30"></td></tr>
+          <tr><td class="column_timetable" id="9:30">9:30-10:30</td><td id="lunes-9:30"></td><td id="martes-9:30"></td><td id="miercoles-9:30"></td><td id="jueves-9:30"></td><td id="viernes-9:30"></td></tr>
+          <tr><td class="column_timetable" id="10:30">11:30-12:30</td><td id="lunes-10:30"></td><td id="martes-10:30"></td><td id="miercoles-10:30"></td><td id="jueves-10:30"></td><td id="viernes-10:30"></td></tr>
+          <tr><td class="column_timetable" id="11:30">11:30-12:30</td><td id="lunes-11:30"></td><td id="martes-11:30"></td><td id="miercoles-11:30"></td><td id="jueves-11:30"></td><td id="viernes-11:30"></td></tr>
+          <tr><td class="column_timetable" id="12:30">12:30-13:30</td><td id="lunes-12:30"></td><td id="martes-12:30"></td><td id="miercoles-12:30"></td><td id="jueves-12:30"></td><td id="viernes-12:30"></td></tr>
+          <tr><td class="column_timetable" id="13:30">13:30-14:30</td><td id="lunes-13:30"></td><td id="martes-13:30"></td><td id="miercoles-13:30"></td><td id="jueves-13:30"></td><td id="viernes-13:30"></td></tr>
+          <tr><td class="column_timetable" id="14:30">14:30-15:30</td><td id="lunes-14:30"></td><td id="martes-14:30"></td><td id="miercoles-14:30"></td><td id="jueves-14:30"></td><td id="viernes-14:30"></td></tr>
+          <tr><td class="column_timetable" id="15:30">15:30-16:30</td><td id="lunes-15:30"></td><td id="martes-15:30"></td><td id="miercoles-15:30"></td><td id="jueves-15:30"></td><td id="viernes-15:30"></td></tr>
+          <tr><td class="column_timetable" id="16:30">16:30-17:30</td><td id="lunes-16:30"></td><td id="martes-8:30"></td><td id="miercoles-16:30"></td><td id="jueves-16:30"></td><td id="viernes-16:30"></td></tr>
+          <tr><td class="column_timetable" id="17:30">17:30-18:30</td><td id="lunes-17:30"></td><td id="martes-8:30"></td><td id="miercoles-17:30"></td><td id="jueves-17:30"></td><td id="viernes-17:30"></td></tr>
+          <tr><td class="column_timetable" id="18:30">18:30-19:30</td><td id="lunes-18:30"></td><td id="martes-8:30"></td><td id="miercoles-18:30"></td><td id="jueves-18:30"></td><td id="viernes-18:30"></td></tr>
+          <tr><td class="column_timetable" id="19:30">19:30-20:30</td><td id="lunes-19:30"></td><td id="martes-19:30"></td><td id="miercoles-19:30"></td><td id="jueves-19:30"></td><td id="viernes-19:30"></td></tr>
+          <tr><td class="column_timetable" id="20:30">20:30-21:30</td><td id="lunes-20:30"></td><td id="martes-20:30"></td><td id="miercoles-20:30"></td><td id="jueves-20:30"></td><td id="viernes-20:30"></td></tr>
+        </table>
+      </div>
+      <h3>Bibligraf&iacute;a</h3>
+      <p>
+        <ol class="biblio">
+          <li class="biblio">“JavaScript: the definitive guide”. Flanagan, David, 2010. Recurso disponible en: http://avalos.ujaen.es/record=b2157992</li>
+          <li class="biblio">“JavaScript Absolute Beginner's Guide”. Chinnathambi, Kirupa. Recurso disponible en: https://0-proquestcombo.safaribooksonline.com.avalos.ujaen.es/9780134498638</li>
+        </ol>
+      </p>
+  </body>
+</html>
