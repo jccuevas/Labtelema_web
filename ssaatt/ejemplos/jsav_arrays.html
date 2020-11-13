@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/main.css">
+    <title>Introducción a JavaScript - arrays</title>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Introducción a JavaScript - arrays</h1>
+    </header>
+    <main>
+        <p>En este ejemplo se muestran ejemplos de características avanzadas de manejo de arrays en JavaScript</p>
+        <section>
+            <h2>Operador de propagación - (...)</h2>
+            <p>El operador de propagación (<i>spread operator</i>), representado por tres puntos (...), permite la expansión de una expresión en situaciones
+                donde se esperan múltiples argumentos como en las llamadas a funciones, o múltiples elementos como en
+                arrays literales.</p>
+            <article>
+                <h3>Operaciones con arrays</h3>
+
+                <aside>
+                    <h4>&lt;script&gt;</h4>
+                    <pre>
+
+                    
+                    </pre>
+                </aside>
+                <p>
+                    <script>
+                        let lista = ["Macarrones", "Espaguetis", "Lazos", "Tallarines"];
+
+                        let otra = [...lista, "Raviolis"];
+
+                        let [primer,...resto] = lista;//Desconstruyendo un array
+
+                        document.write(otra.join(", ")+"<br>");
+                        document.write(primer+"<br>");
+                        document.write(resto.join(", ")+"<br>");
+
+                        function listar (...elementos){
+                            elementos.forEach((element,index) => {
+                                console.log(`${index} ${element}`);
+                            });
+                        }
+
+                        listar("uno");
+                        listar("dos","tres");
+                        listar("cuatro","cinco","seis");
+
+                    </script>
+                </p>
+            </article>
+            <article>
+                <h3>En los argumentos de funciones</h3>
+
+                <aside>
+                    <h4>&lt;script&gt;</h4>
+                    <pre>
+function listar (...elementos){
+  elementos.forEach((element,index) => {
+    document.write(`&lt;p&gt;${index} ${element}&lt;/p&gt;`);
+  });
+}
+                    
+                    </pre>
+                </aside>
+                <p>
+                    <script>
+                        
+                        function listar (...elementos){
+                            elementos.forEach((element,index) => {
+                                document.write(`<p>${index} ${element}</p>`);
+                            });
+                        }
+
+                        listar("uno");
+                        listar("dos","tres");
+                        listar("cuatro","cinco","seis");
+
+                    </script>
+                </p>
+            </article>
+
+        </section>
+
+        <section><br><a href="index.html">Inicio</a><br></section>
+    </main>
+    <footer>
+        <p>Servicios y Aplicaciones Telemáticas</p>
+    </footer>
+</body>
+
+</html>
