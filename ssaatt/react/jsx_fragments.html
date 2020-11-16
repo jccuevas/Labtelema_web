@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de React - lista</title>
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+<script type="text/babel">
+    //Se debe separar los datos del diseño de la interfaz
+    const mascotas = [
+        {
+            name: "Jacky",
+            age: 4
+        },
+        {
+            name: "Lassie",
+            age: 10
+        },
+        {
+            name: "Rex",
+            age: 8
+        }];
+
+
+    function Pet({name, age}) {
+        return (
+            <React.Fragment>
+                <h2>Mi mascota se llama {name}</h2>
+                <p>Tiene {age} años</p>
+            </React.Fragment>
+        );
+    }
+
+//Empleamos fragmentos para no crear wrappers
+    function Pets(props) {
+        return (
+            <>
+                <h1>Mis mascotas</h1>
+                {mascotas.map((mascota, i) => (<Pet key={i} {...mascota} />))}
+            </>
+        );
+    }
+
+
+    ReactDOM.render(<Pets />,
+        document.getElementById("root"));
+
+</script>
+
+</html>

@@ -15,6 +15,18 @@
             min-width: 150px;
             padding: 5px;
         }
+        section{
+            overflow: auto;
+        }
+        section header{
+            background-color: lightblue;
+            padding: 2px;
+        }
+
+        section footer{
+            float: right;
+            font-style: italic;
+        }
     </style>
 </head>
 
@@ -37,8 +49,7 @@
         end: "12:00",
         task: "Class"
     }];
-    const encabezado = React.createElement("h1", null, "Ejemplo de lista");
-
+   
     function Agenda(props) {
 
         // Empleo de JSX para generar la lista de días
