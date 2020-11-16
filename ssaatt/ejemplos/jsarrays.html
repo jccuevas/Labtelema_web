@@ -104,6 +104,27 @@ function cuadrado(elemento, indice, array) {
     return Math.pow(elemento,2);
 }
 document.write("Cuadrado "+dobles.join(", ") + "<br>");
+
+document.write("Antes: "+numeros.join(", ") + "<br>");
+                            let menores = numeros.filter(menor);
+
+
+                            function menor(elemento, indice, array) {
+                                return elemento<10?true:false;
+                            }
+                            document.write("Menores "+menores.join(", ") + "<br>");
+
+                            let factores = [1,2,3,4,5,6,7];
+
+                            let multiplicar = function (acumulador,actual){
+                                document.write(`Acumulado=${acumulador}, valor actual=${actual} Resultado=${acumulador*actual}<br>`);
+                                return acumulador * actual;
+                            }
+
+                            document.write("Números: "+factores.join(", ") + "<br>");
+                            let producto = factores.reduce(multiplicar,1);
+                            
+                            document.write("Producto resultado: "+producto + "<br>");
                         </pre>
                     </aside>
                     <h4>for ... of</h4>
@@ -141,7 +162,47 @@ document.write("Cuadrado "+dobles.join(", ") + "<br>");
                             }
                         </script>
                     </p>
-                    <h4>map()</h4>
+                    
+                </article>
+                <article>
+                    <h3>Cambio de datos inmutables</h3>
+                    <aside>
+                        <h4>&lt;script&gt;</h4>
+                        <pre>
+
+document.write("Antes: "+numeros.join(", ") + "&lt;br&gt;");
+let dobles = numeros.map(cuadrado);
+
+
+function cuadrado(elemento, indice, array) {
+    return Math.pow(elemento,2);
+}
+document.write("Cuadrado "+dobles.join(", ") + "&lt;br&gt;");
+
+document.write("Antes: "+numeros.join(", ") + "&lt;br&gt;");
+let menores = numeros.filter(menor);
+
+
+function menor(elemento, indice, array) {
+    return elemento&lt;10?true:false;
+}
+document.write("Menores "+menores.join(", ") + "&lt;br&gt;");
+
+let factores = [1,2,3,4,5,6,7];
+
+let multiplicar = function (acumulador,actual){
+    document.write(`Acumulado=${acumulador}, valor actual=${actual} Resultado=${acumulador*actual}&lt;br&gt;`);
+    return acumulador * actual;
+}
+
+document.write("Números: "+factores.join(", ") + "&lt;br&gt;");
+let producto = factores.reduce(multiplicar,1);
+
+document.write("Producto resultado: "+producto + "&lt;br&gt;");
+                        </pre>
+                    </aside>
+                    
+                    <h4>map()  Hallar el cuadrado de un array de números</h4>
                     <p>
                         <script>
 
@@ -155,8 +216,8 @@ document.write("Cuadrado "+dobles.join(", ") + "<br>");
                             document.write("Cuadrado "+dobles.join(", ") + "<br>");
                         </script>
                     </p>
-                    <h4>filter()</h4>
-                    <p>Dejar los números menores de 10
+                    <h4>filter() - Dejar los números menores de 10</h4>
+                    <p>
                         <script>
 
                             document.write("Antes: "+numeros.join(", ") + "<br>");
@@ -167,6 +228,22 @@ document.write("Cuadrado "+dobles.join(", ") + "<br>");
                                 return elemento<10?true:false;
                             }
                             document.write("Menores "+menores.join(", ") + "<br>");
+                        </script>
+                    </p>
+                    <h4>reduce() - Calcular el producto de una serie de números</h4>
+                    <p>
+                        <script>
+                            let factores = [1,2,3,4,5,6,7];
+
+                            let multiplicar = function (acumulador,actual){
+                                document.write(`<i>Acumulado=${acumulador}, valor actual=${actual} Resultado=${acumulador*actual}</i><br>`);
+                                return acumulador * actual;
+                            }
+
+                            document.write("Números: "+factores.join(", ") + "<br>");
+                            let producto = factores.reduce(multiplicar,1);
+                            
+                            document.write(`Producto resultado: ${producto}<br>`);
                         </script>
                     </p>
                 </article>
