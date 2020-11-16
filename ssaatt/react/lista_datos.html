@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de React - lista</title>
+    <style>
+        .dia {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</body>
+<script>
+    //Se debe separar los datos del diseño de la interfaz
+    const elementos = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    const encabezado = React.createElement("h1", null, "Ejemplo de lista");
+    const lista = React.createElement("ul", {className:"dia"}, elementos.map((dia,i) => React.createElement("li", { key: i}, dia)));
+    const seccion = React.createElement("section",null,lista);
+
+    ReactDOM.render([encabezado, seccion], document.getElementById("root"));
+
+    console.log(lista);
+</script>
+
+</html>
