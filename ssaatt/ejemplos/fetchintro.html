@@ -185,9 +185,8 @@ function servicioError(url) {
                         </pre>
                     </aside>
 
-                    Petición Fetch con error: <button title="Petición fetch" onclick="servicioError('error.html')">Hacer petición</button><br>
+                    Petición Fetch con error: <button title="Petición fetch" onclick="servicioError('https://labtelema.ujaen.es/ssaatt/mapa2.png')">Hacer petición</button><br>
                     Petición Fetch con correcta a un recurso que no existe <button title="Petición fetch" onclick="servicioError('http://labtelema.ujaen.es/ssaatt/mapa2.png')">Hacer petición</button><br>
-
                     Petición Fetch correcta con el mismo código a un recurso que sí existe: <button title="Petición fetch" onclick="servicioError('http://labtelema.ujaen.es/ssaatt/mapa.png')">Hacer petición</button>
                     <div id="resultado3" class="resultado">
                         <img id="imgerror" alt="error" src="">
@@ -260,7 +259,7 @@ function servicioPost(url) {
                     </aside>
 
                     <p>Se envían datos a un formulario remoto.</p>
-                    Petición Fetch con error: <button title="Petición fetch" onclick="servicioPost('https://labtelema.ujaen.es/api/form.php')">Hacer petición</button><br>
+                    Petición Fetch con error: <button title="Petición fetch" onclick="servicioPost('http://labtelema.ujaen.es/api/form.php')">Hacer petición</button><br>
                     <div id="resultado4" class="resultado">
 
                     </div>
@@ -362,7 +361,7 @@ function servicioPostCopia(url) {
                     </aside>
 
                     <p>Se envían datos a un formulario remoto con tres peticiones, dos con el mismo constructor y una con clone().</p>
-                    Lanzar tres Peticiones Fetch copiadas: <button title="Petición fetch" onclick="servicioPostCopia('https://labtelema.ujaen.es/api/form.php')">Hacer petición</button><br>
+                    Lanzar tres Peticiones Fetch copiadas: <button title="Petición fetch" onclick="servicioPostCopia('http://labtelema.ujaen.es/api/form.php')">Hacer petición</button><br>
 
                     <div id="resultado5" class="resultado">
 
