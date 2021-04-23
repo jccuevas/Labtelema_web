@@ -1,0 +1,18 @@
+#root{
+    height: 100%;
+}
+
+header.title{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+
+footer.foot{
+    text-align: center;
+    width: 100%;
+    background-color: blue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+}

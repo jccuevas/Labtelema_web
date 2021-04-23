@@ -1,0 +1,40 @@
+<!--
+    Servicios y Aplicaciones Telemáticas
+    Este es un ejemplo de uso de elementos en React
+    Autor: Juan Carlos Cuevas Martínez
+    version: 1.0
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de un elemento simple React</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <!-- Este es el contenedor base para el contenido generado por React-->
+    <div id="root"></div>
+    <!-- Se añaden los scrips para poder ejecutar React-->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <!-- Para poder interpretar JSX (entre otras cosas) necesitamos Babel.
+         A los script que tengan que utilizarlo se les debe añadir
+        type="text/babel"
+    -->
+    <script
+      crossorigin
+      src="https://unpkg.com/@babel/standalone/babel.min.js"
+    ></script>
+  </body>
+  <script type="text/babel">
+    let persona = "José Pérez";
+    let heading = <h1>¡Hola {persona}! </h1>; //Ahora empleamos JSX insertando JavaScript en él con las llaves
+
+    ReactDOM.render(heading, document.getElementById("root"));
+  </script>
+</html>
