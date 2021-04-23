@@ -1,29 +1,39 @@
+<!--
+    Servicios y Aplicaciones Telemáticas
+    Este es un ejemplo de uso de componentes en React para generar una lista
+    Autor: Juan Carlos Cuevas Martínez
+    version: 1.0
+-->
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Ejemplo de React - lista</title>
+    <link rel="stylesheet" href="estilos.css">
     <style>
         .tarea {
             color: blue;
             font-weight: bold;
             list-style: none;
-            border: 2px solid blue;
+            background-color: white;
             margin-bottom: 10px;
             max-width: 25%;
             min-width: 150px;
             padding: 5px;
+            box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
         }
-        section{
+
+        section {
             overflow: auto;
         }
-        section header{
+
+        section header {
             background-color: lightblue;
             padding: 2px;
         }
 
-        section footer{
+        section footer {
             float: right;
             font-style: italic;
         }
@@ -36,25 +46,46 @@
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </body>
+<script src="Header.js" type="text/babel"></script>
+<script src="Footer.js" type="text/babel"></script>
+<script src="Main.js" type="text/babel"></script>
 <script type="text/babel">
+    
+    let user = "Usuario";
     //Se debe separar los datos del diseño de la interfaz
     const tareas = [{
-        date: "10/12/2020",
-        start: "10:00",
-        end: "11:00",
-        task: "Meeting"
+        date: "23/04/2021",
+        start: "10:30",
+        end: "11:30",
+        task: "Reunión"
     }, {
-        date: "12/12/2020",
-        start: "11:00",
-        end: "12:00",
-        task: "Class"
+        date: "23/04/2021",
+        start: "15:30",
+        end: "17:30",
+        task: "Teoría"
+    },{
+        date: "23/04/2021",
+        start: "15:30",
+        end: "17:30",
+        task: "Prácticas"
     }];
-   
-    function Agenda(props) {
+
+
+    function App(props) {
+        return (
+            <>
+                <Header peron={user}/>
+                <Agenda />
+                <Footer peron={user}/>
+            </>
+        );
+    }
+
+    function Tareas(props) {
 
         // Empleo de JSX para generar la lista de días
         return (
-            <section  className="tarea">
+            <section className="tarea">
                 <header> {props.entrada.task}</header>
                 <p>{props.entrada.date}</p>
                 <footer>{props.entrada.start}-{props.entrada.end}</footer>
@@ -62,17 +93,17 @@
         );
     }
 
-    function Menu(props) {
+    function Agenda(props) {
         return (
             <article>
-                <h1>Agenda</h1>
-                {tareas.map((entrada,i)=>(<Agenda key={i} entrada={entrada}/>))}
+                <h2>Agenda</h2>
+                {tareas.map((entrada, i) => (<Tareas key={i} entrada={entrada} />))}
             </article>
         );
     }
 
 
-    ReactDOM.render(<Menu />,
+    ReactDOM.render(<App />,
         document.getElementById("root"));
 
 </script>
