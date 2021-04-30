@@ -54,8 +54,22 @@
       this.state = {
         counter: 0
       }
+      this.handleClick =
+        this.handleClick.bind(this);
+
     }
 
+    handleClick() {
+      this.setState({
+        counter: this.state.counter + 1
+      })
+    }
+
+    handleClick2() {
+      this.setState({
+        counter: this.state.counter - 1
+      })
+    }
     render() {
       return (
         <main>
@@ -64,6 +78,12 @@
             La complejidad de este elemento me debe hacer pensar que podría
               extraer algún <strong>Componente</strong>
           </p>
+          <p>Contador <strong>{this.state.counter}</strong></p>
+          <p>Este contador se modifica con dos métodos, uno a través de vincular this al método en el constructor,
+             y otro a través de llamar al método dentro de una función flecha</p>
+          <button onClick={this.handleClick}>Sumar a la cuenta</button>
+          <button onClick={()=>this.handleClick2()}>Restar a la cuenta</button>
+
         </main>
       );
     }
