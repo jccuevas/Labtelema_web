@@ -14,6 +14,7 @@
     <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </body>
 <script type="text/babel">
+
     //Se debe separar los datos del diseño de la interfaz
     const mascotas = [
         {
@@ -31,10 +32,21 @@
 
 
     function Pet({name, age}) {
+
+
+        function handleSpeak (){
+            console.log("Tengo "+age+" años");
+        }
+
+        React.useEffect(()=>{
+            document.title="Tengo "+age+" años";
+        });
+
         return (
             <React.Fragment>
                 <h2>Mi mascota se llama {name}</h2>
                 <p>Tiene {age} años</p>
+                <button onClick={()=>handleSpeak()}>Speak</button>
             </React.Fragment>
         );
     }
