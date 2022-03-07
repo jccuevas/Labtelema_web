@@ -50,60 +50,55 @@
 <script src="Footer.js" type="text/babel"></script>
 <script src="Main.js" type="text/babel"></script>
 <script type="text/babel">
-    
-    let user = "Usuario";
-    //Se debe separar los datos del diseño de la interfaz
-    const tareas = [{
-        date: "23/04/2021",
-        start: "10:30",
-        end: "11:30",
-        task: "Reunión"
-    }, {
-        date: "23/04/2021",
-        start: "15:30",
-        end: "17:30",
-        task: "Teoría"
-    },{
-        date: "23/04/2021",
-        start: "15:30",
-        end: "17:30",
-        task: "Prácticas"
-    }];
+    const user = "usuario";
 
 
-    function App(props) {
-        return (
-            <>
-                <Header person={user}/>
-                <Agenda />
-                <Footer person={user}/>
-            </>
-        );
-    }
-
-    function Tareas(props) {
-
-        // Empleo de JSX para generar la lista de días
-        return (
-            <section className="tarea">
-                <header> {props.entrada.task}</header>
-                <p>{props.entrada.date}</p>
-                <footer>{props.entrada.start}-{props.entrada.end}</footer>
-            </section>
-        );
-    }
-
-    function Agenda(props) {
-        return (
-            <article>
-                <h2>Agenda</h2>
-                {tareas.map((entrada, i) => (<Tareas key={i} entrada={entrada} />))}
-            </article>
-        );
+    class App extends React.Component {
+        render() {
+            return (
+                <>
+                    <Header person={this.props.user} />
+                    <Form />
+                    <Footer person={this.props.user} />
+                </>
+            );
+        }
     }
 
 
-    ReactDOM.render(<App />,
+
+    class Form extends React.Component {
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                name: ""
+            }
+            this.handleNameChange = this.handleNameChange.bind(this);
+        }
+
+        handleNameChange(e) {
+
+            this.setState({
+                name: e.target.value
+            });
+        }
+
+        render() {
+            return (
+                <article>
+                    <h2>Formulario {this.state.name.length > 0 ? "de" : ""} {this.state.name}</h2>
+                    <form>
+                        <label htmlFor="name">Nuevo nombre:</label>
+                        <input id="name" name="name" type="text" value={this.state.name} onChange={this.handleNameChange} />
+                    </form>
+                </article>
+            );
+        }
+    }
+
+
+    ReactDOM.render(<App user={user} />,
         document.getElementById("root"));
 
 </script>

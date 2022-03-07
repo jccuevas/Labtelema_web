@@ -1,0 +1,180 @@
+<!--
+    Servicios y Aplicaciones Telemáticas
+    Este es un ejemplo de uso de elementos en React
+    Autor: Juan Carlos Cuevas Martínez
+    version: 1.0
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejemplo de un elemento simple React</title>
+  <meta charset="utf-8" />
+  <!-- Igualmente puedo emplear estilos-->
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+  <!-- Este es el contenedor base para el contenido generado por React-->
+  <div id="root"></div>
+  <!-- Se añaden los scrips para poder ejecutar React-->
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <!-- Para poder interpretar JSX (entre otras cosas) necesitamos Babel.
+         A los script que tengan que utilizarlo se les debe añadir
+        type="text/babel"
+    -->
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</body>
+<script type="text/babel">
+
+  class Header extends React.Component {
+    render() {
+      return (
+        <header className="title">
+          <h1>¡Hola {this.props.person}! </h1>
+        </header>
+      );
+    }
+  }
+
+  class Footer extends React.Component {
+    render() {
+      return (
+        <footer className="foot">
+          <p>Registrado como {this.props.person}</p>
+        </footer>
+      );
+    }
+  }
+
+  class Main extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        age: 30,
+        pass: "",
+        isLoaded: false,
+        data: [],
+        errorLoading: false
+      }
+      this.filterAge = this.filterAge.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+    }
+
+    filterAge(event) {
+      console.log("Elemento: " + event.target.name);
+      this.setState({ [event.target.name]: event.target.value });
+    }
+
+    componentDidMount() {
+      fetch("http://labtelema.ujaen.es:8083/exam/usuario")
+        .then(res => res.json())
+        .then((result) => {
+          this.setState(
+            {
+              isLoaded: true,
+              data: result
+            })
+        }
+          , (error) => {
+            this.setState(
+              {
+                isLoaded: false,
+                errorLoading: true
+              })
+          });
+
+    }
+
+    handleClick(index)
+    {
+      this.setState({isLoaded:false});
+
+    }
+
+    render() {
+      let datos = ["Uno", "Dos", "Tres", "Cuatro"];
+      let nombres = [
+        { "user": "jccuevas", "pass": "12345", "age": 23 },
+        { "user": "jmpere", "pass": "gbhgf6", "age": 45 },
+        { "user": "jkoilw", "pass": "4532", "age": 56 },
+        { "user": "wertwert", "pass": "45wet432", "age": 35 }
+      ]
+      let resultado;
+      let filtrados = nombres.filter((usuario, i) => {
+        return usuario.age > this.state.age ? true : false;
+      });
+
+
+      return (
+        <main>
+          <h2>Esto es una lista</h2>
+          <form name="form">
+            <label htmlFor="f_edad">Edad</label>
+            <input type="number" id="f_edad" name="age" onChange={this.filterAge} value={this.state.age} />
+            <br />
+            <input type="text" id="f_pass" name="pass" onChange={this.filterAge} value={this.state.pass} />
+          </form>
+          <p>{this.state.pass}</p>
+          <ul>
+            {filtrados.map((usuario, i) => {
+              return <li key={i} className="milista">
+                <small>{usuario.user}</small>
+                <br /><strong>{usuario.pass}</strong>
+              </li>
+            })}
+
+          </ul>
+          <section>
+            <h4>Exámenes</h4>
+
+            {this.state.isLoaded ? <List data={this.state.data} onClick={this.handleClick}/> : <p>Cargando</p>}
+          </section>
+
+
+
+        </main>
+      );
+    }
+  }
+
+  class List extends React.Component {
+    render() {
+      return (
+        <ul>
+          {this.props.data.map((exam,i) => {
+            return (
+              <li key={exam._id}>
+                <div>
+                  <button onClick={()=>this.props.onClick(i)}>Acción</button>
+                <strong>{exam.title}</strong>
+                <small>{exam.date}</small><br/>
+                <small>{exam.user}</small>
+                </div>
+                
+                </li>
+            )
+          })}
+        </ul>
+      );
+    }
+  }
+
+
+  let conectado = false;
+
+  let persona = "José Pérez";
+  //Para añadir algunos atributos a JSX cambian, como class a className (camel case)
+  let heading = (
+    <>
+      <Header person={persona} />
+      <Main increment={2} />
+      <Footer person={persona} />
+    </>
+  ); //Ahora empleamos JSX insertando JavaScript en él con las llaves
+
+  ReactDOM.render(heading, document.getElementById("root"));
+</script>
+
+</html>

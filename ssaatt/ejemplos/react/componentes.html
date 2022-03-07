@@ -52,29 +52,115 @@
     constructor(props) {
       super(props);
       this.state = {
-        counter: 0
+        counter: 0,
+        error: false,
+        message: true,
+        connected: false
       }
+
+      this.doLogin = this.doLogin.bind(this);
     }
 
+    doLogin() {
+      conectado = !conectado;
+      console.log("Estoy " + (conectado ? "ON" : "OFF"));
+      this.setState({ error: false });
+
+      let req = new XMLHttpRequest();
+      req.onreadystatechange = (event) => {
+        if (req.readyState == 4) {
+          if (req.status == 200) {
+            console.log("conectado");
+            this.setState({ connected: true });
+          } else {
+            console.log("error " + req.status);
+            this.setState({ connected: false, error: true });
+          }
+        }
+      }
+      let data = { "user": "usuario", "password": "1345" };
+      req.open("POST", "http://labtelema.ujaen.es:8083/login");
+      req.setRequestHeader("Content-Type", "application/json");
+      req.send(JSON.stringify(data));
+
+    }
+
+
+
+
+
     render() {
+
+      let botonLogin = <button id="ocultar" onClick={this.doLogin}>Acceder</button>;
+      let botonCerrar = <strong>Cerrar sesión</strong>;
       return (
         <main>
           <h2>Esto es una elemento complejo</h2>
-          <p>
-            La complejidad de este elemento me debe hacer pensar que podría
-              extraer algún <strong>Componente</strong>
-          </p>
+          {!this.state.connected ? botonLogin : botonCerrar}
+          {this.state.error?<p className="red">Error de conexión</p>:false}
         </main>
       );
     }
   }
+
+  class Connect extends React.Component {
+
+    render() {
+      return (
+        <div>
+          <p>{this.props.connected ? <strong>ON</strong> : <strong>OFF</strong>} </p>
+          <button onClick={() => this.props.login()}>Conectar</button>
+        </div>
+      )
+    }
+  }
+
+  class Mensaje extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = { show: true }
+      this.apaga = this.apaga.bind(this);
+    }
+
+    componentDidMount() {
+      setTimeout(this.apaga, 5000);
+    }
+
+    componentWillUnmount() {
+      console.log("DESMONTANDO");
+      clearTimeout(this.apaga);
+    }
+
+    apaga() {
+      this.setState({ show: false });
+    }
+
+    render() {
+      let dialog = (
+
+        <h2>{this.props.message}</h2>
+
+      );
+
+      let show = this.state.show ? dialog : <p>Apagadoo</p>;
+      return (
+        <div className="dialog">
+          {show}
+        </div>
+      );
+    }
+
+
+  }
+
+  let conectado = false;
 
   let persona = "José Pérez";
   //Para añadir algunos atributos a JSX cambian, como class a className (camel case)
   let heading = (
     <>
       <Header person={persona} />
-      <Main />
+      <Main increment={2} />
       <Footer person={persona} />
     </>
   ); //Ahora empleamos JSX insertando JavaScript en él con las llaves
