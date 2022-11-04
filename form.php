@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <ul>
             <?php
             foreach ($_POST as $clave => $valor) {
-                echo "<li>Parámetro:<code>" . $clave . "</code> valor=<var>" . $valor . "</var></li>";
+                echo "<li><strong>Parámetro:</strong><code>" . htmlspecialchars($clave) . "</code><br><strong>valor=</strong><var>" . htmlspecialchars($valor) . "</var></li>";
             }
 			?>
             </ul>
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <ul>
             <?php
             foreach ($_GET as $clave => $valor) {
-                echo "<li>Parámetro:<code>" . $clave . "</code> valor=<var>" . $valor . "</var></li>";
+                echo "<li><strong>Parámetro:</strong><code>" . htmlspecialchars($clave) . "</code><br><strong>valor=</strong><var>" . $valor . "</var></li>";
             }
 			?>
             </ul>
