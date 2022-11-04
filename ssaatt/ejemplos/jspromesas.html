@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="estilos/normalize.css" />
+    <link rel="stylesheet" href="estilos/main.css" />
+    <title>Introducción a JavaScript - Promesas</title>
+    <style>
+      #contenedor {
+        background-color: lightgrey;
+        padding: 10px;
+        width: 80%;
+        margin: 20px 10%;
+        height: 250px;
+        overflow: auto;
+      }
+      .resultado {
+        border: 2px solid red;
+        background-color: lightsalmon;
+        padding: 0.2em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+    </style>
+
+    <script>
+      var global = 10;
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Introducción a JavaScript - Promesas</h1>
+      <p>
+        En este ejemplo se muestra cómo definir promesas (Promise) y cómo
+        emplearlas
+      </p>
+    </header>
+    <main>
+      <section>
+        <h2>Definir una <code>Promise</code></h2>
+        <p>
+          Las promesas son una característica introducida en la versión 6 de
+          JavaScript, facilitando la gestión de las operaciones asíncronas.
+        </p>
+        <p>
+          Una promesa es un objeto que representa un valor que puede que esté
+          disponible «ahora», en un «futuro» o que «nunca» lo esté.
+        </p>
+        <p>
+          Como no se sabe cuándo va a estar disponible, todas las operaciones
+          dependientes de ese valor, tendrán que posponerse en el tiempo.
+        </p>
+        <p>
+          Dado que JavaScript es «single threaded» (un solo hilo), lo que
+          significa que solo puede ejecutar una acción al mismo tiempo, utilizar
+          promesas facilita, en buena medida, el control de flujos de datos
+          asíncronos en una aplicación.
+        </p>
+        <p>En el recuadro inferior se mostrará el resultado de la promesa (Refresaca la página para llamar de nuevo a la promesa)</p>
+        <p id="resultado1" class="resultado"></p>
+        
+        <pre>
+    &lt;script&gt;
+    var p = document.getElementById("resultado1");
+    p.innerHTML = "Resultado de la promesa...";
+
+    const promise = new Promise((resolve, reject) => {
+      //La promesa resolverá si el número aleatorio generado es mayor que 4, en otro caso será rechazada
+      const number = Math.floor(Math.random() * 12);
+      setTimeout(
+        () =>
+          number > 4 ? resolve(number) : reject(new Error("Menor a 4")),
+        2000
+      );
+    });
+
+    //Llamada a la promesa
+    //En el caso de que la promesa resuelva se ejecutará la función en then(), si
+    //se rechaza se ejecutará la función en catch()
+    promise
+      .then((number) => (p.innerHTML = "Valor resuelto=" + number))
+      .catch(
+        (error) => (p.innerHTML = "La promesa ha fallado: " + error)
+      );
+    &lt;/script&gt;
+                </pre
+        >
+        <script>
+          var p = document.getElementById("resultado1");
+          p.innerHTML = "Resultado de la promesa...";
+
+          const promise = new Promise((resolve, reject) => {
+            //La promesa resolverá si el número aleatorio generado es mayor que 4, en otro caso será rechazada
+            const number = Math.floor(Math.random() * 12);
+            setTimeout(
+              () =>
+                number > 4 ? resolve(number) : reject(new Error("Menor a 4")),
+              2000
+            );
+          });
+
+          //Llamada a la promesa
+          //En el caso de que la promesa resuelva se ejecutará la función en then(), si
+          //se rechaza se ejecutará la función en catch()
+          promise
+            .then((number) => (p.innerHTML = "Valor resuelto=" + number))
+            .catch(
+              (error) => (p.innerHTML = "La promesa ha fallado: " + error)
+            );
+        </script>
+      </section>
+
+      <section><br /><a href="index.html">Inicio</a><br /></section>
+    </main>
+    <footer><p>Servicios y Aplicaciones Telemáticas</p></footer>
+  </body>
+</html>
