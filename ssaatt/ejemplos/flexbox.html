@@ -251,6 +251,35 @@ div.flex2 {
             >
           </aside>
         </article>
+        <article>
+          <h3>Anidación de elementos flexibles</h3>
+          <p>
+            Se ha emplado <code>flex: 1;</code> y <code>flex: 2;</code> para
+            cambiar la proporción que ocupan los elementos en el contendor.
+          </p>
+          <div class="flex-container">
+            <div class="flex-container box flex2">
+              <div class="box flex1">Elemento <code>flex: 1</code></div>
+              <div class="box flex1">Elemento <code>flex: 1</code></div>
+              <div class="box flex1">Elemento <code>flex: 1</code></div>
+            </div>
+            <div class="box flex1">
+              <h3>Columna 2</h3>
+              Elemento <code>flex: 1</code>
+            </div>
+            <div class="box flex1" style="order: 1">
+              <h3>Columna 3</h3>
+              Elemento <code>flex: 1</code>
+            </div>
+          </div>
+          <aside>
+            <h4>Estilos</h4>
+            <pre>
+
+                  </pre
+            >
+          </aside>
+        </article>
       </section>
       <section><br /><a href="index.html">Inicio</a><br /></section>
     </main>
