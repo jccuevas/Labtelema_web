@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Seminario CSS - Ejemplo del modelo de cajas Flexbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="estilos/normalize.css" />
+    <link rel="stylesheet" href="estilos/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      div.flex-container {
+        display: flex;
+        margin-bottom: 2em;
+      }
+
+      div.flex-container-column {
+        display: flex;
+        margin-bottom: 2em;
+        flex-direction: column;
+      }
+
+      div.flex-container-wrap {
+        display: flex;
+        margin-bottom: 2em;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 600px;
+      }
+
+      div.box {
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        margin-right: 1em;
+        margin-bottom: 1em;
+        background-color: antiquewhite;
+      }
+
+      div.wrap {
+        flex: 200px;
+      }
+
+      div.flex-container-justify {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2em;
+      }
+
+      div.flex1 {
+        flex: 1;
+      }
+      div.flex2 {
+        flex: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Seminario CSS - Ejemplo del modelo de cajas Flexbox</h1>
+    </header>
+    <main>
+      <p>
+        Con la propiedad <code>display: flex</code> podemos controlar más
+        efectivamente cómo se distribuyen los elementos hijos y el espacio entre
+        ellos.
+      </p>
+
+      <section>
+        <h2>Distribución de elementos</h2>
+        <article>
+          <h3>Elementos igualmente espaciados.e</h3>
+          <p>
+            Se ha emplado <code>display: flex;</code> en el contenedor de los
+            tres div. Prueba a cambiar la anchura de la página para comprobar su
+            comportamiento. Por defecto la alineación es en filas
+            <code>flex-direction: row</code>.
+          </p>
+          <div class="flex-container">
+            <div class="box">
+              <h3>Columna 1</h3>
+              Elemento flexible
+            </div>
+            <div class="box">
+              <h3>Columna 2</h3>
+              Elemento flexible con más texto
+            </div>
+            <div class="box">
+              <h3>Columna 3</h3>
+              Elemento flexible con mucho más texto que los demás elementos
+            </div>
+          </div>
+          <p>
+            Debajo aparecen las mismas cajas pero cambiando la dirección
+            principal a columnas <code>flex-direction: column</code>.
+          </p>
+
+          <div class="flex-container-column">
+            <div class="box">
+              <h3>Columna 1</h3>
+              Elemento flexible
+            </div>
+            <div class="box">
+              <h3>Columna 2</h3>
+              Elemento flexible con más texto
+            </div>
+            <div class="box">
+              <h3>Columna 3</h3>
+              Elemento flexible con mucho más texto que los demás elementos
+            </div>
+          </div>
+          <p>
+            Si los hijos se desborda en caso de contenedores de ancho fijo de
+            puede emplear <code>flex-wrap: wrap</code>.
+          </p>
+          <div class="flex-container-wrap">
+            <div class="box wrap">
+              <h3>Columna 1</h3>
+              Elemento flexible
+            </div>
+            <div class="box wrap">
+              <h3>Columna 2</h3>
+              Elemento flexible con más texto
+            </div>
+            <div class="box wrap">
+              <h3>Columna 3</h3>
+              Elemento flexible con mucho más texto que los demás elementos
+            </div>
+            <div class="box wrap">
+              <h3>Columna 4</h3>
+              Elemento flexible
+            </div>
+            <div class="box wrap">
+              <h3>Columna 5</h3>
+              Elemento flexible
+            </div>
+            <div class="box wrap">
+              <h3>Columna 6</h3>
+              Elemento flexible
+            </div>
+          </div>
+
+          <aside>
+            <h4>Estilos</h4>
+            <pre>
+div.flex-container {
+  display: flex;
+  margin-bottom: 2em;
+}
+                  
+div.flex-container-column {
+  display: flex;
+  margin-bottom: 2em;
+  flex-direction: column;
+}
+                  
+div.box {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  background-color: antiquewhite;
+}
+      
+div.flex-container-column {
+    display: flex;
+    margin-bottom: 2em;
+    flex-direction: column;
+  }
+
+div.flex-container-wrap {
+    display: flex;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 600px;
+}
+div.wrap {
+    flex:200px
+}
+            </pre>
+          </aside>
+        </article>
+        <article>
+          <h3>Elementos igualmente espaciados.</h3>
+          <p>
+            Se ha emplado <code>justify-content: space-between;</code> para que
+            los elementos tengan un espaciado uniforme en el eje principal.
+          </p>
+          <div class="flex-container-justify">
+            <div class="box">
+              <h3>Columna 1</h3>
+              Elemento <br />
+              flexible
+            </div>
+            <div class="box">
+              <h3>Columna 2</h3>
+              Elemento <br />
+              flexible
+            </div>
+            <div class="box">
+              <h3>Columna 3</h3>
+              Elemento flexible con <br />
+              mucho más texto <br />
+              que los demás elementos
+            </div>
+          </div>
+          <aside>
+            <h4>Estilos</h4>
+            <pre>
+div.flex-container-justify {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+              </pre
+            >
+          </aside>
+        </article>
+        <article>
+          <h3>Elementos con diferentes proporciones</h3>
+          <p>
+            Se ha emplado <code>flex: 1;</code> y <code>flex: 2;</code> para
+            cambiar la proporción que ocupan los elementos en el contendor.
+          </p>
+          <div class="flex-container">
+            <div class="box flex2">
+              <h3>Columna 1</h3>
+              Elemento <code>flex: 2</code>
+            </div>
+            <div class="box flex1">
+              <h3>Columna 2</h3>
+              Elemento <code>flex: 1</code>
+            </div>
+            <div class="box flex1" style="order: 1">
+              <h3>Columna 3</h3>
+              Elemento <code>flex: 1</code>
+            </div>
+          </div>
+          <aside>
+            <h4>Estilos</h4>
+            <pre>
+div.flex1 {
+    flex: 1;
+}
+div.flex2 {
+    flex: 2;
+}
+                </pre
+            >
+          </aside>
+        </article>
+      </section>
+      <section><br /><a href="index.html">Inicio</a><br /></section>
+    </main>
+    <footer>
+      <p>Servicios y Aplicaciones Telemáticas</p>
+    </footer>
+  </body>
+</html>
