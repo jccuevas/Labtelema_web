@@ -187,7 +187,7 @@ function servicioError(url) {
 
                     Petición Fetch con error: <button title="Petición fetch" onclick="servicioError('https://labtelema.ujaen.es/ssaatt/mapa2.png')">Hacer petición</button><br>
                     Petición Fetch con correcta a un recurso que no existe <button title="Petición fetch" onclick="servicioError('http://labtelema.ujaen.es/ssaatt/mapa2.png')">Hacer petición</button><br>
-                    Petición Fetch correcta con el mismo código a un recurso que sí existe: <button title="Petición fetch" onclick="servicioError('http://labtelema.ujaen.es/ssaatt/mapa.png')">Hacer petición</button>
+                    Petición Fetch correcta con el mismo código a un recurso que sí existe: <button title="Petición fetch" onclick="servicioError('https://labtelema.ujaen.es/ssaatt/mapa.png')">Hacer petición</button>
                     <div id="resultado3" class="resultado">
                         <img id="imgerror" alt="error" src="">
                     </div>
@@ -258,8 +258,9 @@ function servicioPost(url) {
                         </pre>
                     </aside>
 
-                    <p>Se envían datos a un formulario remoto.</p>
+                    <p>Se envían datos a un formulario remoto a partir de un objeto FormData.</p>
                     Petición Fetch con error: <button title="Petición fetch" onclick="servicioPost('http://labtelema.ujaen.es/api/form.php')">Hacer petición</button><br>
+                    Petición Fetch correcta: <button title="Petición fetch" onclick="servicioPost('http://labtelema.ujaen.es/form.php')">Hacer petición</button><br>
                     <div id="resultado4" class="resultado">
 
                     </div>
