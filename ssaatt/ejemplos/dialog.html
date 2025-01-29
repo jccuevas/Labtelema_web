@@ -2,21 +2,63 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="estilos/normalize.css" />
     <link rel="stylesheet" href="estilos/main.css" />
     <title>Cuadros de diálogo</title>
   </head>
   <body>
     <header>
-      <h1>Cuadros de diálogo</h1>
+      <h1>Cuadros de diálogo </h1>
     </header>
     <main>
       <p>
-        En este ejemplo se muestran ejemplos sencillos del manejo de arrays en
-        JavaScript
+        En esta página se muestran ejemplos de cuadros de diálogo HTML, elemento <pre>&lt;dialog&gt;</pre>, tanto modales como no nodales. 
+        Un cuadro de diálogo modal, cuando está visible, no permite la interacción con el resto de la página web, 
+        mientras que un cuadro de diálogo no modal, sí permite que se interactúe con él y con el resto de 
+        la página web siendo éste ya visible.       
+      </p>
+      <p>Se debe destacar que para poder usar cuadros de manera que estos saquen su mayor potencial, se necesita emplear JavaScript, ya que estos deben responder a ciertas acciones.
+        La esencial es poder mostrarse (open), además de, por supuestos, poder ocultarse o cerrarse (close).
       </p>
       <section>
-        <h2>Definición y acceso a los elementos</h2>
+        <h2>Ejemplo de un cuadro de diálogo con solo HTML</h2>
+       
+        <article>
+          <h3>Ejemplo de un cuadro de diálogo con solo HTML</h3>
+          <p>Como se puede comprobar, aparece directamente en la página dado que tiene incluido el atributo open, 
+            y dado que solamente es HTML no tiene ningún efecto si se pulsa su botón.</p>
+          <dialog open>
+            <p>Greetings, one and all!</p>
+            <form method="dialog">
+              <button type="button">OK</button>
+            </form>
+          </dialog>
+          
+          <aside>
+            <h4>&lt;HTML&gt;</h4>
+            <pre>
+&lt;dialog open&gt;
+&lt;p&gt;Greetings, one and all!&lt;/p&gt;
+&lt;form method=&quot;dialog&quot;&gt;
+  &lt;button type=&quot;button&quot;&gt;OK&lt;/button&gt;
+&lt;/form&gt;
+&lt;/dialog&gt;
+                        </pre>
+          </aside>
+          <p>
+            
+          </p>
+        </article>
+      </section>
+      <section>
+        <h2>Ejemplo de un cuadro de diálogo con solo HTML</h2>
+        <dialog open>
+          <p>Greetings, one and all!</p>
+          <form method="dialog">
+            <button type="button">OK</button>
+          </form>
+        </dialog>
         <article>
           <h3>Definición de un array</h3>
 
@@ -40,7 +82,6 @@ document.write("Un array (con join()):" + lista.join("; ")+"&lt;br&gt;");
           </p>
         </article>
       </section>
-
       <section><br /><a href="index.html">Inicio</a><br /></section>
     </main>
     <footer><p>Servicios y Aplicaciones Telemáticas</p></footer>
