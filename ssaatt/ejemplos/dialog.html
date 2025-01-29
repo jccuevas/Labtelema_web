@@ -34,14 +34,24 @@
           <p>
             Como se puede comprobar, aparece directamente en la página dado que
             tiene incluido el atributo open, y dado que solamente es HTML no
-            tiene ningún efecto si se pulsa su botón.
+            tiene ningún efecto si se pulsa su botón "Aceptar".
           </p>
-          <dialog open>
+          <p>Para volver a mostrarlo se debe eplear JavaScript, como por ejemplo con la función que se 
+            llama al pulsar el botón "Mostrar diálogo".</p>
+          </p>
+          <button type="button" onclick="showDialog1()">Mostrar diálogo</button>
+          <dialog open id="dialog1">
             <p>¡Saludos!</p>
             <form method="dialog">
-              <button type="button">Aceptar</button>
+              <button type="submit">Aceptar</button>
             </form>
           </dialog>
+          <script>
+            function showDialog1() {
+              let dialog1 = document.getElementById("dialog1");
+              dialog1.show();
+            }
+          </script>
 
           <aside>
             <h4>HTML</h4>
@@ -54,31 +64,52 @@
 &lt;/dialog&gt;
                         </pre
             >
+            <h4>JavaScript</h4>
+            <pre>
+function showDialog1() {
+  let dialog1 = document.getElementById("dialog1");
+  dialog1.show();
+}
+            </pre>
           </aside>
           <p></p>
         </article>
 
         <article>
-          <h3>Definición de un array</h3>
-
+          <h3>Cuadro de diálogo modal</h3>
+<p>Los cuadros de diálog </p>
+          <button type="button" onclick="showModalDialog()">Mostrar diálogo modal</button>
+          <dialog id="dialogModal">
+            <p>¡Saludos! soy un cuadro de diálogo modal</p>
+            <form method="dialog">
+              <button type="submit">Aceptar</button>
+            </form>
+          </dialog>
+          <script>
+            function showModalDialog() {
+              let dialogModal = document.getElementById("dialogModal");
+              dialogModal.showModal();
+            }
+          </script>
           <aside>
+            <h4>&lt;HTML&gt;</h4>
+            <pre>
+&lt;dialog id=&quot;dialogModal&quot;&gt;
+  &lt;p&gt;&iexcl;Saludos! soy un cuadro de di&aacute;logo modal&lt;/p&gt;
+  &lt;form method=&quot;dialog&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;Aceptar&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/dialog&gt;
+            </pre>
             <h4>&lt;script&gt;</h4>
             <pre>
-let lista=["Macarrones","Espaguetis","Lazos","Tallarines"];
-document.write("Un array:" + lista+"&lt;br&gt;");
-document.write("Un array (con join()):" + lista.join("; ")+"&lt;br&gt;");
-                        </pre
-            >
+function showModalDialog() {
+  let dialogModal = document.getElementById("dialogModal");
+  dialogModal.showModal();
+}
+            </pre>
           </aside>
-          <p>
-            <script>
-              let lista = ["Macarrones", "Espaguetis", "Lazos", "Tallarines"];
-              document.write("Un array:" + lista + "<br>");
-              document.write(
-                "Un array (con join()):" + lista.join("; ") + "<br>"
-              );
-            </script>
-          </p>
+          
         </article>
       </section>
       <section><br /><a href="index.html">Inicio</a><br /></section>
